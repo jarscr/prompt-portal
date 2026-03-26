@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompts para AI — Biblioteca</title>
+<style>
+  :root {
+    --c-marketing:   #8B5CF6;
+    --c-negocios:    #3B82F6;
+    --c-productiv:   #10B981;
+    --c-seo:         #F59E0B;
+    --c-finanzas:    #EF4444;
+    --c-aprendizaje: #06B6D4;
+    --c-herramientas:#EC4899;
+    --c-investigacion:#6366F1;
+    --c-redaccion:   #14B8A6;
+    --sidebar-w: 280px;
+    --bg: #F8FAFC;
+    --card-bg: #FFFFFF;
+    --text: #1E293B;
+    --muted: #64748B;
+    --border: #E2E8F0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); display: flex; min-height: 100vh; }
+
+  /* ── SIDEBAR ── */
+  #sidebar {
+    width: var(--sidebar-w); min-width: var(--sidebar-w);
+    background: #0F172A; color: #CBD5E1;
+    position: fixed; top: 0; left: 0; height: 100vh;
+    overflow-y: auto; display: flex; flex-direction: column;
+    z-index: 100;
+  }
+  #sidebar-header {
+    padding: 24px 20px 16px;
+    border-bottom: 1px solid #1E293B;
+  }
+  #sidebar-header h1 { font-size: 15px; font-weight: 700; color: #F1F5F9; letter-spacing: 0.3px; }
+  #sidebar-header p { font-size: 12px; color: #64748B; margin-top: 4px; }
+  #search-wrap { padding: 12px 16px; }
+  #search {
+    width: 100%; padding: 8px 12px; border-radius: 8px;
+    border: 1px solid #1E293B; background: #1E293B; color: #F1F5F9;
+    font-size: 13px; outline: none;
+  }
+  #search::placeholder { color: #475569; }
+  #search:focus { border-color: #3B82F6; }
+
+  #nav { padding: 8px 0 24px; }
+  .nav-cat {
+    display: flex; align-items: center; gap: 10px;
+    padding: 9px 16px; cursor: pointer;
+    border-radius: 6px; margin: 1px 8px;
+    font-size: 13px; text-decoration: none; color: #94A3B8;
+    transition: background 0.15s;
+  }
+  .nav-cat:hover { background: #1E293B; color: #F1F5F9; }
+  .nav-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .nav-label { flex: 1; line-height: 1.3; }
+  .nav-count {
+    font-size: 11px; background: #1E293B; color: #475569;
+    border-radius: 10px; padding: 1px 7px; min-width: 22px; text-align: center;
+  }
+  .nav-cat:hover .nav-count { background: #334155; }
+
+  /* ── MAIN ── */
+  #main {
+    margin-left: var(--sidebar-w); flex: 1; padding: 40px 48px;
+    max-width: 960px;
+  }
+  #top-bar { margin-bottom: 36px; }
+  #top-bar h2 { font-size: 26px; font-weight: 700; color: var(--text); }
+  #top-bar p { font-size: 14px; color: var(--muted); margin-top: 6px; }
+  #stats { display: flex; gap: 20px; margin-top: 16px; }
+  .stat-pill {
+    background: white; border: 1px solid var(--border);
+    border-radius: 20px; padding: 6px 16px; font-size: 13px; color: var(--muted);
+  }
+  .stat-pill strong { color: var(--text); }
+
+  /* ── CATEGORY SECTION ── */
+  .cat-section { margin-bottom: 48px; }
+  .cat-header {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 20px; padding-bottom: 12px;
+    border-bottom: 2px solid;
+  }
+  .cat-icon { font-size: 20px; }
+  .cat-title { font-size: 19px; font-weight: 700; }
+  .cat-badge {
+    font-size: 12px; padding: 3px 10px; border-radius: 12px;
+    color: white; font-weight: 600; margin-left: auto;
+  }
+
+  /* ── PROMPT CARD ── */
+  .prompt-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 12px; padding: 0;
+    margin-bottom: 16px; overflow: hidden;
+    border-left: 4px solid;
+    transition: box-shadow 0.2s;
+    display: none; /* hidden by default, shown by JS */
+  }
+  .prompt-card.visible { display: block; }
+  .prompt-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+  .card-header {
+    display: flex; align-items: flex-start;
+    justify-content: space-between; gap: 16px;
+    padding: 16px 20px 12px;
+  }
+  .card-title { font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.4; }
+  .card-source { font-size: 11px; color: var(--muted); margin-top: 3px; }
+  .copy-btn {
+    flex-shrink: 0; padding: 6px 14px; border-radius: 8px;
+    border: 1px solid var(--border); background: white;
+    font-size: 12px; cursor: pointer; color: var(--muted);
+    transition: all 0.15s; display: flex; align-items: center; gap: 6px;
+    white-space: nowrap;
+  }
+  .copy-btn:hover { background: #F1F5F9; color: var(--text); }
+  .copy-btn.copied { background: #ECFDF5; color: #059669; border-color: #6EE7B7; }
+  .prompt-body {
+    padding: 0 20px 18px;
+    font-size: 13.5px; line-height: 1.75; color: #374151;
+    white-space: pre-wrap; word-break: break-word;
+    border-top: 1px solid #F1F5F9;
+    padding-top: 14px;
+  }
+  .prompt-body .placeholder {
+    background: #FEF9C3; color: #92400E;
+    padding: 1px 5px; border-radius: 4px;
+    font-family: 'SF Mono', monospace; font-size: 12.5px;
+  }
+
+  /* ── NO RESULTS ── */
+  #no-results {
+    display: none; text-align: center; padding: 60px 20px;
+    color: var(--muted);
+  }
+  #no-results svg { margin-bottom: 16px; opacity: 0.3; }
+  #no-results p { font-size: 15px; }
+
+  /* ── SCROLL TOP ── */
+  #scroll-top {
+    position: fixed; bottom: 28px; right: 28px;
+    background: #0F172A; color: white;
+    width: 40px; height: 40px; border-radius: 10px;
+    border: none; cursor: pointer; font-size: 18px;
+    display: none; align-items: center; justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: opacity 0.2s;
+  }
+  #scroll-top.show { display: flex; }
+  #scroll-top:hover { background: #1E293B; }
+
+  @media (max-width: 768px) {
+    #sidebar { width: 100%; height: auto; position: relative; }
+    #main { margin-left: 0; padding: 20px; }
+    body { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside id="sidebar">
+  <div id="sidebar-header">
+    <h1>📋 Prompts para IA</h1>
+    <p>53 prompts · 9 categorías</p>
+  </div>
+  <div id="search-wrap">
+    <input id="search" type="text" placeholder="🔍 Buscar prompt..." autocomplete="off">
+  </div>
+  <nav id="nav">
+    <a class="nav-cat" href="#marketing">
+      <span class="nav-dot" style="background:var(--c-marketing)"></span>
+      <span class="nav-label">Marketing y Redes Sociales</span>
+      <span class="nav-count">8</span>
+    </a>
+    <a class="nav-cat" href="#negocios">
+      <span class="nav-dot" style="background:var(--c-negocios)"></span>
+      <span class="nav-label">Estrategia de Negocios</span>
+      <span class="nav-count">12</span>
+    </a>
+    <a class="nav-cat" href="#productividad">
+      <span class="nav-dot" style="background:var(--c-productiv)"></span>
+      <span class="nav-label">Productividad y Organización</span>
+      <span class="nav-count">8</span>
+    </a>
+    <a class="nav-cat" href="#seo">
+      <span class="nav-dot" style="background:var(--c-seo)"></span>
+      <span class="nav-label">SEO y Contenido</span>
+      <span class="nav-count">6</span>
+    </a>
+    <a class="nav-cat" href="#finanzas">
+      <span class="nav-dot" style="background:var(--c-finanzas)"></span>
+      <span class="nav-label">Finanzas y Freelance</span>
+      <span class="nav-count">6</span>
+    </a>
+    <a class="nav-cat" href="#aprendizaje">
+      <span class="nav-dot" style="background:var(--c-aprendizaje)"></span>
+      <span class="nav-label">Aprendizaje y Desarrollo</span>
+      <span class="nav-count">7</span>
+    </a>
+    <a class="nav-cat" href="#herramientas">
+      <span class="nav-dot" style="background:var(--c-herramientas)"></span>
+      <span class="nav-label">Herramientas y Prompts IA</span>
+      <span class="nav-count">6</span>
+    </a>
+    <a class="nav-cat" href="#investigacion">
+      <span class="nav-dot" style="background:var(--c-investigacion)"></span>
+      <span class="nav-label">Investigación y Análisis</span>
+      <span class="nav-count">3</span>
+    </a>
+    <a class="nav-cat" href="#redaccion">
+      <span class="nav-dot" style="background:var(--c-redaccion)"></span>
+      <span class="nav-label">Redacción y Comunicación</span>
+      <span class="nav-count">3</span>
+    </a>
+  </nav>
+</aside>
+
+<!-- MAIN -->
+<main id="main">
+  <div id="top-bar">
+    <h2>Biblioteca de Prompts</h2>
+    <p>Tus prompts organizados por categoría. Haz clic en <strong>Copiar</strong> para usar cualquier prompt.</p>
+    <div id="stats">
+      <div class="stat-pill"><strong>53</strong> prompts</div>
+      <div class="stat-pill"><strong>9</strong> categorías</div>
+    </div>
+  </div>
+
+  <div id="no-results">
+    <svg width="48" height="48" fill="none" viewBox="0 0 24 24"><path stroke="#64748B" stroke-width="1.5" stroke-linecap="round" d="M21 21l-4.35-4.35M17 11A6 6 0 111 11a6 6 0 0116 0z"/></svg>
+    <p>No se encontraron prompts para tu búsqueda.</p>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       1. MARKETING Y REDES SOCIALES
+  ══════════════════════════════════════ -->
+  <section class="cat-section" id="marketing">
+    <div class="cat-header" style="border-color:var(--c-marketing)">
+      <span class="cat-icon">📣</span>
+      <span class="cat-title" style="color:var(--c-marketing)">Marketing y Redes Sociales</span>
+      <span class="cat-badge" style="background:var(--c-marketing)">8 prompts</span>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-marketing)">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Crea un calendario de redes sociales</div>
+        </div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Eres un experto gestor de redes sociales. Quiero que crees un calendario de publicaciones en las redes sociales durante un mes, a partir de [insertar la fecha de inicio del calendario]. La frecuencia de publicación será [diaria/cada dos días/cada día de la semana/semanal]. Mi empresa se llama [insertar nombre] y vendemos [insertar productos o servicios].
+Para cada post, incluye el día en que se publicará, un título, el cuerpo del texto e incluye hashtags relevantes. El tono de voz que utilizamos es [profesional/casual/divertido/amistoso]. Para cada post, incluye también una sugerencia de una imagen que podamos utilizar y que pueda encontrarse en un servicio de imágenes de archivo.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-marketing)">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Ideación de Campaña para Reels de Instagram</div>
+        </div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Sugiere [X] conceptos únicos de reels de Instagram que demuestren las mejores características de nuestro nuevo [producto/servicio]. Usa una combinación de demostraciones de productos, testimonios de clientes y narración creativa para mostrar los beneficios. [Público objetivo, proporciona contexto y detalles]</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-marketing)">
+      <div class="card-header">
+        <div>
+          <div class="card-title">E-mail Marketing</div>
+        </div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Ponte en la piel de una leyenda del marketing para esta tarea. Estás trabajando para [NOMBRE DE LA MARCA], que ha desarrollado una nueva línea de productos [DESCRIBIR UNA CARACTERÍSTICA CLAVE], [DESCRIBIR LA OFERTA]. Necesitamos una secuencia de emails que conecte emocionalmente con nuestro público actual, centrada en [DESCRIBIR UNA VENTAJA CLAVE] de estos productos.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-marketing)">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Diseña una campaña de marketing por email</div>
+        </div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Diseña una campaña de múltiples emails de alta conversión para el lanzamiento de [describe tu producto] mediante la segmentación del público objetivo con perfiles claros, puntos débiles y factores desencadenantes de la compra; el posicionamiento y los mensajes que destaquen el valor único de la herramienta para cada segmento; una estrategia para el asunto con múltiples opciones que despierten la curiosidad y se centren en los beneficios; y una estructura de contenido detallada para cada email que incluya un gancho, el mensaje principal (características destacadas, oferta especial o prueba social), elementos visuales, toques personalizados basados en el nombre, el tipo de negocio o las características relevantes, y una llamada a la acción contundente. Incluye recursos persuasivos, como ofertas, testimonios, casos prácticos o métricas de éxito, para generar confianza y urgencia; tácticas de personalización que se adapten dinámicamente al comportamiento o los datos demográficos de los usuarios; y un calendario y una cadencia de envío recomendados para la semana de lanzamiento y los seguimientos, con un razonamiento claro detrás de cada elección.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-marketing)">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Marketing de afiliación</div>
+        </div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Diseña una página de aterrizaje optimizada para nuestro tráfico de afiliados.
+El objetivo principal es convertir a los visitantes procedentes de [socio o plataforma de afiliación específica] para nuestro [producto o servicio específico]. Incluye sugerencias para el titular, la llamada a la acción y los elementos visuales.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-marketing)">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Estrategizar — Hashtags en Twitter/X</div>
+        </div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Crea una estrategia concisa de hashtags en Twitter para impulsar el crecimiento de facturación electrónica en Costa Rica:
+
+- Investiga y selecciona de 5 a 10 hashtags relevantes y de alto impacto
+- Incorpora estos hashtags en un plan de contenido para publicaciones consistentes
+- Analiza el rendimiento de los hashtags y aprovecha los temas de tendencia para aumentar la visibilidad
+- Colabora con influencers de la industria para amplificar el alcance de tus hashtags</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-marketing)">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Generar ideas virales para X (Twitter)</div>
+        </div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Eres un estratega de crecimiento especializado en contenido viral en X (Twitter).
+
+Tu tarea es generar 20 IDEAS VIRALES listas para publicar para una cuenta genérica, sin estilo personal asociado.
+
+Cada idea debe incluir:
+- Hook (máx. 130 caracteres): frase que rompa el scroll al instante.
+- Idea base: el concepto central del post o hilo.
+- Tipo de post: hilo / lista / comparación / before-after / descubrimiento / historia / reflexión / recurso.
+- Emoción dominante: curiosidad / sorpresa / utilidad / admiración / miedo / indignación / deseo.
+- Ángulo psicológico: novedad / contradicción / autoridad / FOMO / status / validación social / revelación / sorpresa.
+- Tono: neutro, directo, claro y universal.
+- Primer tweet completo: redactado y listo para publicar.
+- Marca con ⭐ las ideas de mayor potencial viral.
+
+CONTEXTO: Cuenta genérica sin identidad definida. Nicho flexible: tecnología, productividad, hábitos, historias, aprendizajes, análisis, reflexiones, curiosidades, tendencias digitales.
+
+INSTRUCCIONES: Crea ideas que funcionen para cualquier creador, sin tono caótico ni elegante, solo neutro y universal. Usa contradicciones, comparaciones fuertes, aprendizajes personales, descubrimientos, datos inesperados y patrones rotos. Evita clichés del tipo "10 herramientas de IA" o "cómo ganar dinero online" sin un enfoque diferente. Incluye mínimo 3 ideas que puedan acompañarse con vídeo o imagen viral.
+
+GENERAR AHORA LAS 20 IDEAS.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-marketing)">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Crear ideas para contenido</div>
+          <div class="card-source">Fuente: Will Francis</div>
+        </div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Eres un experto estratega de marketing digital que habla y escribe español con fluidez. Concibes las mejores ideas de contenido.
+
+Crea un plan de contenido que incluya ideas de contenido para blogs, vídeos y publicaciones en redes sociales para mi negocio.
+
+Optimiza los títulos de los contenidos para mejorar el posicionamiento en los motores de búsqueda y en los resultados de búsqueda de las redes sociales. Muchas palabras clave tendrán un significado muy similar y no necesitamos duplicar contenidos en torno a la misma idea. Tu trabajo inicial consiste en determinar qué palabras clave únicas hay aquí y luego generar ideas para ellas. Presenta el plan en forma de tabla, con la primera columna titulada «Título del contenido» y la segunda columna titulada «Palabra clave principal».
+
+Antes de hacerlo, pídeme que haga lo siguiente:
+1. Ve a Google.
+2. Busca la palabra clave principal en torno a la cual estamos creando ideas de contenido.
+3. Busca «La gente también pregunta».
+4. Haz clic en cualquier pregunta para expandirla y ábrela y ciérrala repetidamente al menos 10 veces para que la lista se alargue.
+5. Copia todas las preguntas y pégalas aquí, junto con la palabra clave principal.</div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       2. ESTRATEGIA DE NEGOCIOS
+  ══════════════════════════════════════ -->
+  <section class="cat-section" id="negocios">
+    <div class="cat-header" style="border-color:var(--c-negocios)">
+      <span class="cat-icon">💼</span>
+      <span class="cat-title" style="color:var(--c-negocios)">Estrategia de Negocios</span>
+      <span class="cat-badge" style="background:var(--c-negocios)">12 prompts</span>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-negocios)">
+      <div class="card-header">
+        <div><div class="card-title">Actúa como director general (CEO)</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Quiero que actúes como CEO de una empresa hipotética. Serás responsable de tomar decisiones estratégicas, gestionar los resultados financieros de la empresa y representarla ante las partes interesadas externas. Se te plantearán una serie de situaciones y retos a los que deberás responder, y deberás utilizar tu mejor juicio y tus dotes de liderazgo para encontrar soluciones. Recuerda mantenerte profesional y tomar decisiones que redunden en beneficio de la empresa y sus empleados. Tu primer reto es «abordar una posible situación de crisis en la que sea necesaria la retirada de un producto. ¿Cómo manejarás esta situación y qué medidas tomarás para mitigar cualquier impacto negativo en la empresa?».</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-negocios)">
+      <div class="card-header">
+        <div><div class="card-title">Estrategia de colaboración para el crecimiento</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Actúa como experto en asociaciones estratégicas. Ayúdame a crear una estrategia de asociación para mi negocio: [insertar negocio]. Describe los 2-3 tipos de asociación más importantes que impulsarían la visibilidad y el crecimiento. Define objetivos claros, nuestra propuesta de valor y los beneficios mutuos. Incluye un plan sencillo de divulgación y participación, además de métricas de éxito para realizar un seguimiento del impacto. Asegúrate de que la estrategia respalda las relaciones a largo plazo y se alinea con nuestros objetivos comerciales. Bonus: comparte 1-2 ejemplos reales de sectores similares.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-negocios)">
+      <div class="card-header">
+        <div><div class="card-title">Guía de estilo de liderazgo organizacional</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Actúa como un experto en psicología organizacional y desarrollo de liderazgo. Crea una visión detallada del estilo de liderazgo más adecuado para una [descripción o tipo de empresa]. Explica cómo este estilo de liderazgo influye en la dinámica del equipo, la motivación, la comunicación y la toma de decisiones en ese entorno.
+
+Incluye ejemplos del mundo real o estudios de caso (si corresponde) e identifica los desafíos típicos que enfrentan los líderes con este estilo — como escalar, resolver conflictos o equilibrar la autonomía con la responsabilidad. Luego ofrece estrategias y herramientas prácticas para superar estos desafíos preservando las fortalezas principales del estilo. Bonus: comparte 2–3 rasgos o hábitos que los líderes deberían desarrollar para tener éxito en este contexto empresarial.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-negocios)">
+      <div class="card-header">
+        <div><div class="card-title">Análisis de causa raíz de problemas recurrentes</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Quiero que actúes como experto en mejora de procesos y pensador sistémico. Actualmente me enfrento al siguiente problema recurrente: [describe el problema en detalle con el contexto]. Ayúdame a realizar un análisis de la causa raíz para comprender y resolver este problema desde su origen.
+
+Empieza por ayudarme a definir claramente el problema, incluyendo cuándo, dónde y con qué frecuencia se produce. Guíame en la recopilación de datos o patrones relevantes en torno a este problema. A continuación, utiliza marcos de diagnóstico (como las 5 preguntas, el diagrama de espina de pescado (Ishikawa) o el principio de Pareto) para explorar los posibles factores que contribuyen al problema.
+
+Una vez identificadas las causas más probables, recomienda soluciones prácticas y realistas para abordarlas, tanto soluciones inmediatas como estrategias preventivas a largo plazo.
+
+Bonus: Comparte un ejemplo de una situación o sector similar para mostrar cómo ha funcionado el mismo método en otros casos.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-negocios)">
+      <div class="card-header">
+        <div><div class="card-title">Análisis competitivo estratégico (formato XML)</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body"><instructions>
+Eres un consultor de estrategia de primer nivel con profunda experiencia en análisis competitivo, growth loops, pricing y estrategias de producto basadas en unit economics. Si la información no está disponible, indícalo explícitamente.
+</instructions>
+
+<context>
+<business_name>{{COMPANY}}</business_name>
+<industry>{{INDUSTRY}}</industry>
+<current_focus>
+{{Breve descripción en un párrafo de lo que hace la empresa hoy, incluyendo las principales fuentes de ingresos, modelo de precios, segmentos de clientes y cualquier táctica de crecimiento conocida que se esté utilizando}}
+</current_focus>
+<known_challenges>
+{{Lista o párrafo con los mayores obstáculos que conoces – por ejemplo, crecimiento de usuarios ralentizado, aumento del CAC, presión regulatoria}}
+</known_challenges>
+</context>
+
+<task>
+1. Mapea el panorama competitivo:
+   • Identifica 3-5 competidores directos + 1-2 disruptores de espacios adyacentes.
+   • Resume el posicionamiento, precios y movimientos estratégicos recientes de cada competidor.
+2. Detecta brechas de oportunidad:
+   • Compara las tácticas actuales de COMPANY con las de sus competidores.
+   • Resalta al menos 5 palancas de crecimiento o rentabilidad de alto impacto que no esté explotando actualmente COMPANY.
+3. Prioriza:
+   • Puntúa cada palanca según Impacto y Viabilidad en escala del 1 al 5.
+   • Recomienda las 3 acciones principales con la mayor combinación de Impacto × Viabilidad.
+</task>
+
+<approach>
+- Profundiza MUCHO. Investiga mucho más de lo habitual. Revisa hasta 200 páginas web.
+- No te limites a artículos: sitios web de COMPANY/competidores, plataformas de análisis, etc.
+</approach>
+
+<output_format>
+Devuelve SOLO el siguiente XML:
+<answer>
+  <competitive_landscape><!-- lista de competidores y datos clave --></competitive_landscape>
+  <opportunity_gaps><!-- lista numerada de palancas no explotadas --></opportunity_gaps>
+  <prioritized_actions><!-- tabla con Impacto, Viabilidad, justificación, primer próximo paso --></prioritized_actions>
+  <sources><!-- lista numerada de URLs o títulos de publicaciones --></sources>
+</answer>
+</output_format></div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-negocios)">
+      <div class="card-header">
+        <div><div class="card-title">Informe de Investigación de Mercado</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Ayúdame a recopilar y analizar datos sobre tendencias del mercado, competidores y comportamiento del consumidor en [industria]. Específicamente, me gustaría conocer las tendencias clave en el mercado de [industria específica]. Me gustaría una lista de los principales competidores y una descripción de una frase de sus estrategias de marketing. Me gustaría una breve descripción de las preferencias, comportamientos y cualquier frustración de los clientes potenciales en este mercado. Por favor, compila esto en un informe conciso.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-negocios)">
+      <div class="card-header">
+        <div><div class="card-title">Generador de planes de negocio</div>
+          <div class="card-source">Fuente: r/ChatGPTPromptGenius</div>
+        </div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Asume el papel de un experto estratega empresarial encargado de crear un plan de negocio integral. Tu objetivo principal es desarrollar un plan de negocio detallado y bien estructurado que cubra todos los aspectos esenciales de una nueva empresa. Respira hondo y trabaja en este problema paso a paso. Empieza por redactar un resumen ejecutivo que describa de forma concisa el concepto de negocio, la misión y los objetivos clave. A continuación, realiza un análisis de mercado exhaustivo, identificando los clientes objetivo, los competidores y las tendencias del sector. Desarrolla estrategias sólidas de marketing y ventas que se ajusten a los objetivos comerciales y al público objetivo. Crea proyecciones financieras realistas, incluyendo estados de resultados, previsiones de flujo de caja y análisis de punto de equilibrio. Por último, esboza un plan de acción claro con hitos específicos y plazos para su implementación.
+
+INFORMACIÓN SOBRE MÍ:
+Mi tipo de negocio: [INSERTAR TIPO DE NEGOCIO]
+Mi mercado objetivo: [INSERTAR MERCADO OBJETIVO]
+Mi propuesta de venta única: [INSERTAR PROPUESTA DE VENTA ÚNICA]
+Mi inversión inicial: [INSERTAR IMPORTE DE LA INVERSIÓN INICIAL]
+Mi calendario previsto: [INSERTAR CALENDARIO PREVISTO]
+
+¡MUY IMPORTANTE!: Presenta tu trabajo en un formato estructurado, con títulos claros para cada sección del plan de negocio y utilizando viñetas para los detalles clave de cada sección.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-negocios)">
+      <div class="card-header">
+        <div><div class="card-title">Convencer a un cliente (email persuasivo)</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Escribe un email de marketing persuasivo y atractivo dirigido a [destinatario, por ejemplo, un cliente potencial] que promocione [producto o servicio] de forma que se dirija directamente a sus objetivos, retos o necesidades específicas de su sector. El email debe comenzar con un gancho potente para captar la atención, seguido de una explicación clara y convincente de las características y beneficios más valiosos del producto, especialmente aquellos que resuelvan un problema conocido o aporten una mejora significativa. Incorpora pruebas sociales, métricas de éxito o casos de uso reales si es relevante, y mantén un tono seguro, profesional y centrado en el cliente en todo momento. Concluye el email con una llamada a la acción clara, motivadora y concreta que anime al destinatario a dar el siguiente paso, como reservar una demo, iniciar una prueba gratuita o agendar una llamada.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-negocios)">
+      <div class="card-header">
+        <div><div class="card-title">Analizar los competidores de un sitio web</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Eres un experto en análisis competitivo web.
+Analiza el sitio [URL_del_sitio] para identificar sus competidores directos e indirectos.
+
+Describe en un solo texto claro el posicionamiento del sitio, los principales actores que apuntan al mismo mercado, sus fortalezas, sus debilidades visibles y las oportunidades estratégicas que [nombre_del_sitio] puede aprovechar para diferenciarse.
+
+Basa tu análisis en el contenido, el SEO, el diseño, los precios, la experiencia del usuario y la notoriedad percibida. Termina con una conclusión accionable que resuma las prioridades a corto plazo para fortalecer la competitividad de [nombre_del_sitio].
+
+🚫 No des respuestas vagas, genéricas ni evidentes: cada observación debe ser precisa, argumentada y directamente aplicable.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-negocios)">
+      <div class="card-header">
+        <div><div class="card-title">Generador de Reportes al estilo Gartner</div>
+          <div class="card-source">Fuente: Godofprompt</div>
+        </div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Eres un analista industrial de talla mundial con experiencia en estudios de mercado, inteligencia competitiva y previsiones estratégicas.
+
+Tu objetivo es simular un informe al estilo de Gartner utilizando datos públicos, tendencias históricas y estimaciones lógicas.
+
+Para cada solicitud:
+• Genera información clara y estructurada basada en señales de mercado conocidas.
+• Elabora previsiones respaldadas por datos utilizando hipótesis (expónlas).
+• Identifica los principales proveedores y clasifícalos por nicho, escala o innovación.
+• Destaca los riesgos, los actores emergentes y las tendencias futuras.
+
+Sé analítico, no vago. Utiliza gráficos/tablas cuando sea útil. Sé explícito sobre lo que es estimado y lo que es conocido.
+
+Utiliza esta estructura:
+1. Visión general del mercado
+2. Actores clave
+3. Previsión (1-3 años)
+4. Oportunidades y riesgos
+5. Información estratégica</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-negocios)">
+      <div class="card-header">
+        <div><div class="card-title">Riesgos de ejecución puntual</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Tengo previsto poner en marcha la siguiente estrategia:
+[insertar plan o esquema]
+
+Analícela para detectar posibles riesgos de ejecución. No se limite a cuestiones superficiales: piense como un operador crítico o un gestor de proyectos que ha visto cómo han tenido éxito y fracasado implementaciones en el mundo real.
+
+Recursos: ¿Existen riesgos en cuanto al presupuesto, la dotación de personal o la falta de competencias?
+Calendario: ¿Qué plazos, secuencias o factores externos podrían hacer fracasar la iniciativa?
+Alineación del equipo: ¿Dónde podrían causar problemas la falta de comunicación, el trabajo aislado o la falta de claridad en las responsabilidades?
+Dependencias: ¿Qué proveedores externos, herramientas o iniciativas paralelas podrían convertirse en obstáculos?
+Escalabilidad y sostenibilidad: ¿Qué pasaría si el plan creciera más de lo esperado o se prolongara más de lo previsto?
+Puntos ciegos: ¿Qué suposiciones ocultas podría estar pasando por alto?
+
+Por último, sugiera entre tres y cinco medidas de mitigación que pueda tomar ahora para reducir las posibilidades de fracaso.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-negocios)">
+      <div class="card-header">
+        <div><div class="card-title">Trabajos por hacer (Jobs to be Done)</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Asume que soy un Gerente de Producto para una [inserta producto aquí, por ejemplo: aplicación móvil de entrega de comestibles]. Solo prestará servicios en la [inserta región aquí, ejemplo: región GTA de Toronto].
+
+Quiero realizar una investigación de consumidores para descubrir los trabajos por hacer de mis consumidores.
+
+¿A qué personajes debería dirigirme y luego qué preguntas debería hacerles para obtener su trabajo por hacer? Inspírate en el libro "Mom Test". Puedes adaptar el prompt a tus necesidades específicas.</div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       3. PRODUCTIVIDAD Y ORGANIZACIÓN
+  ══════════════════════════════════════ -->
+  <section class="cat-section" id="productividad">
+    <div class="cat-header" style="border-color:var(--c-productiv)">
+      <span class="cat-icon">⚡</span>
+      <span class="cat-title" style="color:var(--c-productiv)">Productividad y Organización</span>
+      <span class="cat-badge" style="background:var(--c-productiv)">8 prompts</span>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-productiv)">
+      <div class="card-header">
+        <div><div class="card-title">Automatización que ahorra tiempo</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Mi negocio es [describe tu negocio] y mis tareas incluyen [describe las tareas en tu rol]. Para cada tarea, pregunta cómo se está completando actualmente esta tarea y determina si esta tarea podría ser automatizada. Una vez identifiquemos las tareas que podrían beneficiarse de la automatización, crea una tabla de 3 columnas con estos encabezados: tarea, proceso actual, proceso con automatización. En la columna 2, detalla estos procesos y en la columna 3 crea un plan sobre cómo cada tarea podría ser automatizada. Este enfoque estructurado me ayudará a automatizar mi negocio o a prepararme para trabajar con un experto en IA para implementar automatización que ahorre tiempo.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-productiv)">
+      <div class="card-header">
+        <div><div class="card-title">Establecimiento de Objetivos</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Yo soy [menciona el problema al que te enfrentas en detalle con contexto de fondo]. Estoy asesorando a un [cliente/estudiante/mentorizado] que busca lograr [objetivo específico, por ejemplo, mejorar la productividad, perder peso, iniciar un negocio]. Crea un marco de establecimiento de objetivos personalizado para ellos, que incluya objetivos SMART, hitos y pasos accionables. Incluye sugerencias para seguir el progreso y ajustar objetivos si es necesario. Quiero que [menciona cómo quieres la salida en detalle con ejemplos].</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-productiv)">
+      <div class="card-header">
+        <div><div class="card-title">Ordena y organiza con la Matriz de Eisenhower</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Me siento mentalmente abrumado por demasiados pensamientos, tareas y preocupaciones. Ayúdame a organizar todo utilizando la matriz de Eisenhower. Pregúntame qué tengo en mente y luego clasifícalo en:
+
+- Urgente e importante
+- Importante pero no urgente
+- Urgente pero no importante
+- Ninguna de las anteriores (debe eliminarse o ignorarse)
+
+A continuación, sugiéreme qué debo hacer a continuación, delegar o descartar para despejar mi mente.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-productiv)">
+      <div class="card-header">
+        <div><div class="card-title">Visualiza tu trabajo con tableros Kanban</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Asume el papel de un experto senior en gestión de proyectos especializado en sistemas Kanban. Tu tarea consiste en diseñar un tablero Kanban totalmente funcional y adaptado a mi flujo de trabajo.
+
+Lo que debes entregar:
+- Un tablero Kanban completo en tabla, con cuatro columnas: Backlog | En curso | Pruebas | Completado
+- Orientación experta sobre cómo rellenar cada columna, priorizar las tareas (MoSCoW, ICE, urgencia vs. impacto), límites WIP y cómo moverlas
+- Cómo utilizar el tablero a diario/semanalmente para mantener el impulso
+- Cómo eliminar los cuellos de botella y optimizar el flujo de trabajo general
+
+Adaptación contextual:
+Mis tareas: [INSERTAR TUS TAREAS]
+El contexto de mi proyecto: [DESCRIBIR EL CONTEXTO DE TU PROYECTO]
+El tamaño de mi equipo: [INSERTAR EL TAMAÑO DE TU EQUIPO]
+Mi sector: [INSERTAR TU SECTOR]
+Mis objetivos de productividad: [DESCRIBIR TUS OBJETIVOS DE PRODUCTIVIDAD]
+
+LO MÁS IMPORTANTE: Conviértelo en un set de templates Kanban listos para Notion.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-productiv)">
+      <div class="card-header">
+        <div><div class="card-title">Flujo de trabajo de reunión para la acción</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Actúa como un secretario de reuniones impulsado por IA con un sólido conocimiento del contexto empresarial. Te proporcionaré una transcripción de la reunión y tu trabajo consistirá en extraer y organizar la información útil en un paquete estructurado para después de la reunión.
+
+A partir de la transcripción, sigue estos pasos:
+
+1. Identifica y enumera las cinco decisiones clave que se tomaron o acordaron.
+2. Extrae todas las acciones a realizar, incluyendo: Responsable asignado / Tarea específica o resultado / Fecha de vencimiento o plazo sugerido.
+3. Identifica posibles obstáculos o riesgos y para cada uno sugiere una solución o medida de mitigación.
+
+Entrega dos resultados claros:
+- Un resumen conciso y profesional por email, listo para enviar a las partes interesadas.
+- Un gestor de tareas en formato CSV, con columnas: Tarea, Responsable, Fecha de vencimiento, Estado (por defecto «No iniciada»).
+
+Mantén un tono profesional y conciso, sin florituras. Si el contexto no está claro, deduce el significado basándote en los flujos de trabajo habituales del equipo.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-productiv)">
+      <div class="card-header">
+        <div><div class="card-title">Plan de rendimiento 30-60-90 días</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">El plan de desempeño de 30-60-90 días para un nuevo [ROL] en [EMPRESA] está diseñado para garantizar una transición fluida, acelerar las contribuciones tempranas y alinear a la nueva contratación con los objetivos de la compañía.
+
+En los primeros 30 días: enfoque en incorporación y aprendizaje: integración en la cultura, comprensión de la misión, construcción de relaciones con miembros clave. Completar formaciones necesarias, familiarizarse con herramientas y participar activamente en reuniones.
+
+En los días 31-60: comenzar a asumir la propiedad de proyectos, trabajar más estrechamente con equipos multifuncionales. Objetivo: gestionar o apoyar al menos una iniciativa importante.
+
+En los días 61-90: asumir por completo la responsabilidad de un proyecto o iniciativa clave, demostrar liderazgo, impulsar resultados cumpliendo o superando los KPI, entregar informes de impacto y mentorizar a nuevos miembros del equipo.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-productiv)">
+      <div class="card-header">
+        <div><div class="card-title">Socio creativo para la lluvia de ideas</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Función: Eres consultor de innovación y estratega creativo con amplia experiencia ayudando a empresas de la lista Fortune 500.
+
+Contexto: Estás facilitando una sesión dinámica de brainstorming para generar ideas y soluciones diversas, viables e innovadoras.
+
+Restricciones:
+- Proporciona al menos entre 8 y 10 ideas originales y distintas.
+- Equilibra los enfoques prácticos y creativos.
+- Ten en cuenta restricciones de presupuesto, recursos, tiempo y capacidades del equipo.
+- Ofrece una combinación de soluciones a corto, medio y largo plazo.
+
+Formato de entrega:
+Resultados rápidos (esfuerzo mínimo, impacto inmediato):
+[Idea 1]: iniciativa sencilla y de bajo coste.
+[Idea 2]: idea de rápida ejecución que aprovecha activos o asociaciones existentes.
+
+Soluciones a medio plazo (inversión moderada):
+[Idea 3]: inversión moderada con claro potencial de ROI en 3-6 meses.
+[Idea 4]: solución que aborda objetivos estratégicos clave en 6-12 meses.
+
+Grandes cambios (alto impacto, plazo más largo):
+[Idea 5]: enfoque revolucionario con alto coste y potencial transformador.
+[Idea 6]: estrategia audaz que puede alterar los mercados en 1-2 años.
+
+Aportación del usuario: [Describe tu reto, objetivo o tema de brainstorming].</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-productiv)">
+      <div class="card-header">
+        <div><div class="card-title">Mejora los procesos de DevOps</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Optimiza los procesos DevOps de [Organización] con automatización estratégica. Evalúa, optimiza e implementa una solución personalizada. Aumenta la agilidad, confiabilidad y eficiencia de costos. Navega por el proceso con un plan integral.</div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       4. SEO Y CONTENIDO
+  ══════════════════════════════════════ -->
+  <section class="cat-section" id="seo">
+    <div class="cat-header" style="border-color:var(--c-seo)">
+      <span class="cat-icon">🔍</span>
+      <span class="cat-title" style="color:var(--c-seo)">SEO y Contenido</span>
+      <span class="cat-badge" style="background:var(--c-seo)">6 prompts</span>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-seo)">
+      <div class="card-header">
+        <div><div class="card-title">Crea una página de FAQ optimizada para SEO</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Estoy escribiendo un artículo sobre [tema detallado del artículo] y quiero incluir una sección de preguntas frecuentes para mejorar el rendimiento SEO del contenido y aportar valor a los lectores. Actúa como un experto en SEO experto en crear contenido optimizado de preguntas frecuentes. Genera cinco preguntas frecuentes estrechamente relacionadas con el tema principal del artículo, incorporando de forma natural las siguientes palabras clave objetivo: [palabras clave]. Para cada pregunta, proporciona una respuesta clara y concisa que responda plenamente a la consulta en 150 palabras o menos. Asegúrate de que las preguntas están redactadas como los usuarios podrían buscar esta información en Google, y de que las respuestas aportan un valor sustancial y único para destacar en los resultados de búsqueda. Aquí tienes un ejemplo del tipo de resultado que busco: [Ejemplo de un buen resultado].</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-seo)">
+      <div class="card-header">
+        <div><div class="card-title">Estrategia de optimización SEO</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Crea un plan de optimización SEO para el sitio web de [NOMBRE DE LA MARCA]. Céntrate en [el nicho de la marca]. Optimiza [las páginas web] y [el contenido del blog] con [títulos ricos en palabras clave] y [metadescripciones]. Asegúrate de que las palabras clave tengan un KD (dificultad de la palabra clave) bajo y un volumen alto. Implementa [estrategias de enlaces internos] y garantiza un [diseño adaptado a dispositivos móviles]. Analiza las [estrategias SEO de la competencia] para obtener información.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-seo)">
+      <div class="card-header">
+        <div><div class="card-title">Escribe artículos optimizados para SEO</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Quiero que actúes como redactor de contenido especializado en SEO. Primero crea dos tablas. La primera tabla debe ser el esquema del artículo y la segunda debe ser el artículo. Resalta en negrita los títulos de la segunda tabla usando el lenguaje Markdown. Escribe un esquema del artículo por separado antes de escribirlo, con al menos 15 encabezados y subencabezados, incluyendo títulos h1, h2, h3 y h4. Luego comienza a escribir paso a paso siguiendo ese esquema. Escribe un artículo 100% único, optimizado para SEO, escrito por humanos, de 2000 palabras, con al menos 15 encabezados y subencabezados, incluyendo h1, h2, h3 y h4, que cubra el tema proporcionado en el Prompt. Escribe el artículo con tus propias palabras en lugar de copiar y pegar de otras fuentes. Considera la "perplejidad" y la "explosividad" al crear el contenido, asegurando altos niveles de ambas sin perder especificidad o contexto. Usa párrafos completamente detallados que mantengan el interés del lector. Escribe en un estilo conversacional como lo haría un humano. Usa un tono informal, utiliza pronombres personales, mantenlo simple, conecta con el lector, usa voz activa, sé breve, incluye preguntas retóricas e incorpora analogías y metáforas. Termina con un párrafo de conclusión y 5 preguntas frecuentes únicas después de la conclusión.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-seo)">
+      <div class="card-header">
+        <div><div class="card-title">Actúa como un blogger experto</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Redacta una publicación de blog atractiva para nuestra audiencia de [Industria]. Educa a los lectores sobre [TEMA] a través de una narración convincente y un análisis perspicaz. Incorpora una introducción llamativa, contenido valioso y conclusiones accionables.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-seo)">
+      <div class="card-header">
+        <div><div class="card-title">Lee artículos largos más rápido</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Eres asistente de lectura. El usuario te proporcionará un artículo para leer. Lee el artículo detenidamente y genera una guía y una versión simplificada y fácil de leer del artículo con los siguientes requisitos:
+
+## Tu resultado:
+- Mapa mental: En primer lugar, genera un mapa mental de toda la guía.
+- Resumen: A continuación, proporciona un resumen de todo el texto, limitado a 400 palabras.
+- Artículo simplificado: A continuación, presenta tu versión reescrita, simplificada y fácil de leer del artículo.
+
+## Requisitos para la reescritura:
+- Recuento de palabras: Reduce el recuento de palabras a la mitad del original y asegúrate de que no supere las 3000 palabras.
+- Tono del autor: Simula el tono del autor original.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-seo)">
+      <div class="card-header">
+        <div><div class="card-title">Realiza un análisis competitivo de SEO</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Como analista SEO, tu desafío es realizar un análisis competitivo de SEO para [insertar nombre de la empresa], comparando su presencia en línea y rendimiento contra 3 competidores principales en el espacio de [insertar industria]. Identifica las fortalezas y debilidades de los competidores en términos de rankings de palabras clave, perfiles de backlinks, estrategias de contenido y factores técnicos de SEO. Proporciona insights sobre las piezas de contenido de mejor rendimiento de los competidores y sus estrategias para ganar backlinks y compartidos sociales. Basándote en tu análisis, identifica oportunidades para que [insertar nombre de la empresa] supere a sus competidores y capture una mayor porción del mercado de búsqueda orgánica. Proporciona una lista priorizada de recomendaciones para mejorar la estrategia SEO de [insertar nombre de la empresa], teniendo en cuenta el panorama competitivo y las tendencias de la industria.</div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       5. FINANZAS Y FREELANCE
+  ══════════════════════════════════════ -->
+  <section class="cat-section" id="finanzas">
+    <div class="cat-header" style="border-color:var(--c-finanzas)">
+      <span class="cat-icon">💰</span>
+      <span class="cat-title" style="color:var(--c-finanzas)">Finanzas y Freelance</span>
+      <span class="cat-badge" style="background:var(--c-finanzas)">6 prompts</span>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-finanzas)">
+      <div class="card-header">
+        <div><div class="card-title">Actuar como contable</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Quiero que actúes como contable e idees formas creativas de gestionar las finanzas. Tendrás que tener en cuenta el presupuesto, las estrategias de inversión y la gestión de riesgos al crear un plan financiero para tu cliente. En algunos casos, también tendrás que asesorarles sobre las leyes y normativas fiscales para ayudarles a maximizar sus beneficios. Mi primera sugerencia es «Crear un plan financiero para una pequeña empresa que se centre en el ahorro de costes y las inversiones a largo plazo».</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-finanzas)">
+      <div class="card-header">
+        <div><div class="card-title">Gestión financiera para freelancers</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Eres un asesor financiero experimentado especializado en guiar a freelancers hacia la consecución de estabilidad financiera. Proporciona respuestas detalladas y completas con ejemplos prácticos y pasos accionables adaptados a freelancers de nivel intermedio que buscan mejorar su resiliencia financiera. Asegúrate de que tu consejo sea profesional, claro y conciso, centrándote en estrategias que puedan implementarse de manera realista. Desarrolla un plan paso a paso para que los freelancers construyan resiliencia financiera, incluyendo presupuesto, ahorro y gestión de ingresos irregulares, e ilustra tus puntos con ejemplos del mundo real para facilitar una comprensión más profunda de los conceptos.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-finanzas)">
+      <div class="card-header">
+        <div><div class="card-title">Plan de ingresos pasivos</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Crea un plan de ingresos pasivos que combine redes sociales, marketing de afiliados y herramientas de programación automática con IA, para alcanzar $100 diarios en 6 meses.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-finanzas)">
+      <div class="card-header">
+        <div><div class="card-title">Prompt para freelancers (propuesta completa)</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Rol: Eres un consultor freelance de alto nivel especializado en [tu área: diseño, redacción, marketing, desarrollo, etc.].
+
+Un cliente potencial te envía este briefing:
+"[inserta aquí la necesidad o el proyecto del cliente]"
+
+Misión: Escribe una respuesta completa y convincente que incluya:
+- Una propuesta clara (enfoque, etapas, entregables)
+- Un calendario sintético con hitos clave
+- Tres opciones de precios (Estándar, Premium, Experto) con su justificación
+- Tres posibles objeciones del cliente + respuestas adecuadas
+- Un breve mensaje de acompañamiento para enviárselo al cliente (por correo o DM)
+- Un CTA concreto y motivador para avanzar con el proyecto
+
+Estilo esperado: profesional, humano, natural y con un tono ligeramente asertivo.
+
+Negative prompt:
+- No utilices frases genéricas como "Puedo ayudarte a alcanzar tus objetivos."
+- Evita un tono robótico o demasiado formal.
+- No hagas listas vacías: cada punto debe ser concreto, accionable y creíble.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-finanzas)">
+      <div class="card-header">
+        <div><div class="card-title">Desbloquea ingresos a partir de recursos ocultos</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Actúa como Resource Maximizer, un consultor de IA que ayuda a los usuarios a identificar y monetizar los activos infrautilizados. Utiliza una metodología estructurada para comprender primero la motivación del usuario (ingresos principales, ingresos adicionales, ingresos pasivos) y sus limitaciones (tiempo, dinero), y luego guíalos a través de un inventario detallado de recursos en todas las categorías: espacio físico, equipos, activos digitales, habilidades, tiempo y redes.
+
+Para cada activo, evalúa el potencial de monetización utilizando:
+- La demanda del mercado y las tendencias actuales.
+- La ventaja competitiva.
+- El esfuerzo frente a la recompensa (tiempo, coste, complejidad).
+- La alineación con las habilidades, intereses y límites de los usuarios.
+
+Clasifica las opciones en ganancias rápidas, oportunidades a medio plazo e inversiones a largo plazo. Proporciona estrategias viables con plazos, próximos pasos y formas de bajo riesgo para poner a prueba las ideas. Sugiere consideraciones éticas/legales y señala las áreas que requieren orientación profesional.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-finanzas)">
+      <div class="card-header">
+        <div><div class="card-title">Diseña ofertas altamente convertidoras</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Soy [tu profesión/servicio] y ayudo a [tu público objetivo] a lograr [resultado principal] a través de un servicio "hecho por ti" llamado [nombre del servicio].
+
+Mi oferta actual incluye:
+[Entregable #1]
+[Entregable #2]
+[… continúa la lista …]
+
+Duración y precio promedio del proyecto: [describe el rango y la duración].
+
+Basado en esto, ayúdame a crear 10 "Ofertas Caballo de Troya" — servicios pequeños, de alto impacto que:
+- Se entreguen en 2–3 días
+- Aporten valor real por sí solos, pero que conduzcan naturalmente a mi servicio principal
+- Sean repetibles y sistematizables entre clientes
+- Resuelvan un dolor o necesidad urgente de mi público
+
+Para cada oferta, detalla:
+- Qué entregaría (salida o resultado concreto)
+- Por qué es valiosa para el cliente
+- Cómo conecta con mi servicio principal
+- Qué la hace irresistible como "puerta de entrada"
+- Posibles desafíos o puntos a tener en cuenta
+
+Objetivo: atraer clientes ideales con una oferta de "victoria rápida", sobreentregar valor y guiarlos naturalmente hacia mi servicio completo.</div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       6. APRENDIZAJE Y DESARROLLO PERSONAL
+  ══════════════════════════════════════ -->
+  <section class="cat-section" id="aprendizaje">
+    <div class="cat-header" style="border-color:var(--c-aprendizaje)">
+      <span class="cat-icon">🧠</span>
+      <span class="cat-title" style="color:var(--c-aprendizaje)">Aprendizaje y Desarrollo Personal</span>
+      <span class="cat-badge" style="background:var(--c-aprendizaje)">7 prompts</span>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-aprendizaje)">
+      <div class="card-header">
+        <div><div class="card-title">Aprende cualquier cosa más rápido</div>
+          <div class="card-source">Fuente: r/ChatGPTPromptGenius</div>
+        </div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">[SUBJECT] = Tema o habilidad que se quiere aprender
+[CURRENT_LEVEL] = Nivel de conocimientos inicial (principiante/intermedio/avanzado)
+[TIME_AVAILABLE] = Horas semanales disponibles para el aprendizaje
+[LEARNING_STYLE] = Método de aprendizaje preferido (visual/auditivo/práctico/lectura)
+[GOAL] = Objetivo específico de aprendizaje o nivel de habilidad deseado
+
+Paso 1: Evaluación de conocimientos
+1. Desglosa [TEMA] en componentes básicos
+2. Evalúa los niveles de complejidad de cada componente
+3. Traza un mapa de los requisitos previos y las dependencias
+4. Identifica los conceptos fundamentales
+
+Paso 2: Diseño de la ruta de aprendizaje
+1. Crea hitos de progresión basados en [NIVEL ACTUAL]
+2. Estructura los temas en una secuencia de aprendizaje óptima
+3. Estima los requisitos de tiempo por tema
+4. Alinea con las restricciones de [TIEMPO_DISPONIBLE]
+
+Paso 3: Curación de recursos
+1. Identifica materiales que coincidan con [ESTILO_DE_APRENDIZAJE]: cursos en vídeo, libros/artículos, ejercicios interactivos, proyectos prácticos
+2. Clasifica los recursos por eficacia
+
+Paso 4: Marco de práctica
+1. Diseña ejercicios para cada tema
+2. Crea escenarios de aplicación en el mundo real
+3. Desarrolla puntos de control del progreso
+4. Estructura intervalos de revisión
+
+Paso 5: Sistema de seguimiento del progreso
+1. Define indicadores de progreso medibles
+2. Crea criterios de evaluación
+3. Diseña bucles de retroalimentación
+4. Establece métricas de finalización de hitos
+
+Paso 6: Generación del calendario de estudio
+1. Desglosa el aprendizaje en tareas diarias/semanales
+2. Incorpora períodos de descanso y revisión
+3. Añade evaluaciones de puntos de control
+4. Equilibra la teoría y la práctica</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-aprendizaje)">
+      <div class="card-header">
+        <div><div class="card-title">Plan de desarrollo de habilidades de 30 días</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Crea un plan de 30 días para desarrollar una nueva habilidad, dividido en objetivos semanales y tareas diarias. El plan debe ser claro, viable y progresivo.
+
+Selección de habilidades: Elige una habilidad (por ejemplo, programación, hablar en público) y define el éxito al final de los 30 días.
+
+Semana 1: Fundamentos
+- Días 1-3: Investiga los conceptos básicos (artículos, vídeos, etc.).
+- Días 4-7: Comienza el aprendizaje estructurado (cursos en línea o libros), 1-2 horas al día.
+
+Semana 2: Práctica
+- Días 8-10: Aplica lo que has aprendido en proyectos pequeños.
+- Días 11-14: Concéntrate en las áreas más difíciles y pide opiniones.
+
+Semana 3: Aprendizaje avanzado
+- Días 15-17: Aprende técnicas avanzadas.
+- Días 18-21: Aplica lo aprendido en proyectos más grandes y complejos.
+
+Semana 4: Dominio
+- Días 22-24: Perfecciona tus habilidades mediante la práctica.
+- Días 25-27: Identifica y mejora tus puntos débiles.
+- Días 28-30: Completa y comparte un proyecto final; reflexiona sobre tu progreso.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-aprendizaje)">
+      <div class="card-header">
+        <div><div class="card-title">Aprenderlo todo (tutor socrático interactivo)</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Actúa como un tutor experto que me ayude a dominar cualquier tema a través de un curso interactivo en estilo entrevista. El proceso debe ser recursivo y personalizado.
+
+Esto es lo que quiero que hagas:
+
+1. Pregúntame por un tema que quiero aprender.
+2. Divide ese tema en un plan de estudios estructurado con lecciones progresivas, empezando por los fundamentos y avanzando hacia conceptos más avanzados.
+3. Para cada lección:
+   - Explica el concepto de manera clara y concisa, usando analogías y ejemplos del mundo real.
+   - Hazme preguntas al estilo socrático para evaluar y profundizar mi comprensión.
+   - Dame un ejercicio corto o un experimento mental para aplicar lo que he aprendido.
+   - Pregúntame si estoy listo para continuar o si necesito aclaraciones.
+   - Si digo que sí, pasa al siguiente concepto.
+   - Si digo que no, reformula la explicación, proporciona ejemplos adicionales y guíame con pistas hasta que lo entienda.
+4. Después de cada sección importante, proporciona un mini-cuestionario de repaso o un resumen estructurado.
+5. Una vez cubierto todo el tema, pon a prueba mi comprensión con un reto final integrador que combine múltiples conceptos.
+6. Anímame a reflexionar sobre lo que he aprendido y sugiere cómo podría aplicarlo en un proyecto o escenario del mundo real.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-aprendizaje)">
+      <div class="card-header">
+        <div><div class="card-title">La técnica de Tim Ferriss para establecer miedos</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Actúa como un entrenador mental entrenado en la técnica de establecimiento de miedos de Tim Ferriss. Estoy pensando en dar un paso audaz —[inserta la decisión u objetivo que estás evitando, por ejemplo, lanzar un nuevo servicio]—, pero el miedo me lo impide. Guíame a través del ejercicio de establecimiento de miedos:
+
+1. ¿Qué es lo peor que podría pasar, siendo realistas?
+2. ¿Qué podría hacer para evitar o reducir las posibilidades de que eso ocurra?
+3. Si ocurriera lo peor, ¿qué tres formas tendría de recuperarme?
+4. ¿Qué podría perder (crecimiento, oportunidades, libertad) si evito por completo esta decisión?
+
+Anímame a ser sincero, sin dramatizar. Termina con una reformulación motivadora: «¿Y si sale mejor de lo esperado?» y sugiere un pequeño paso de bajo riesgo que podría dar esta semana para empezar a poner a prueba la idea, con miedo y todo.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-aprendizaje)">
+      <div class="card-header">
+        <div><div class="card-title">Asesor brutalmente sincero</div>
+          <div class="card-source">Fuente: Honest Prompts</div>
+        </div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Quiero que actúes y asumas el papel de mi asesor de alto nivel, brutalmente honesto.
+
+Háblame como si fuera un fundador, creador o líder con un enorme potencial, pero que también tiene puntos ciegos, debilidades o delirios que deben eliminarse de inmediato.
+
+No quiero comodidad. No quiero palabras bonitas. Quiero la verdad que duele, si eso es lo que hace falta para crecer. Dame tu análisis completo y sin filtros, aunque sea duro, aunque cuestione mis decisiones, mi mentalidad, mi comportamiento o mi dirección.
+
+Mira mi situación con total objetividad y profundidad estratégica. Quiero que me digas qué estoy haciendo mal, qué estoy subestimando, qué estoy evitando, qué excusas estoy poniendo y dónde estoy perdiendo el tiempo o actuando con modestia.
+
+Luego dime qué necesito hacer, pensar o construir para llegar realmente al siguiente nivel, con precisión, claridad y una priorización implacable.
+
+Si estoy perdido, dímelo. Si estoy cometiendo un error, explícame por qué. Si voy por el buen camino, pero avanzo demasiado lento, dime cómo solucionarlo. No te guardes nada.
+
+Trátame como a alguien cuyo éxito depende de escuchar la verdad, no de que lo mimen.
+
+[Continúa explicando tus objetivos y tu progreso y obtén comentarios]</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-aprendizaje)">
+      <div class="card-header">
+        <div><div class="card-title">Generador de planes de fitness</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Eres entrenador personal certificado y científico deportivo. Crea un plan de entrenamiento seguro, progresivo y apto para principiantes, adaptado a mis datos.
+
+Datos personales (rellenar antes de generar):
+- Edad: [insertar edad]
+- Sexo: [insertar sexo]
+- Altura: [insertar altura]
+- Peso: [insertar peso]
+- Nivel de forma física actual: [sedentario / activo ligero / moderado / etc.]
+- Objetivo principal: [pérdida de grasa / ganancia de músculo / forma física general / energía / etc.]
+- Lesiones, problemas de salud o limitaciones: [insertar]
+- Equipo disponible: [solo peso corporal / mancuernas / gimnasio / etc.]
+- Duración preferida del entrenamiento por sesión: [insertar minutos]
+- Días a la semana disponibles: [insertar]
+- Preferencias/restricciones alimentarias (opcional): [insertar]
+
+Instrucciones para el resultado:
+- Programa de entrenamiento semanal (día a día)
+- Ejercicios, series, repeticiones y periodos de descanso con explicaciones
+- Rutinas de calentamiento y enfriamiento
+- Estrategia de progresión semanal
+- Orientación nutricional básica para apoyar el objetivo
+- Notas de seguridad (forma, recuperación, cómo evitar el sobreentrenamiento)
+- Métodos de seguimiento del progreso</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-aprendizaje)">
+      <div class="card-header">
+        <div><div class="card-title">Investigador profundo</div>
+          <div class="card-source">Fuente: alex_prompter</div>
+        </div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Estoy investigando [tema]. En primer lugar, divide este tema en cinco preguntas clave que plantearían los expertos. A continuación, para cada pregunta: 1) Proporciona la opinión mayoritaria con ejemplos concretos. 2) Identifica dos o tres perspectivas contrarias que cuestionen esta opinión. 3) Explica qué datos o pruebas demostrarían que cada una de las partes tiene razón. Por último, sintetiza todo esto en un marco que pueda utilizar para evaluar nueva información sobre este tema.</div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       7. HERRAMIENTAS Y PROMPTS IA
+  ══════════════════════════════════════ -->
+  <section class="cat-section" id="herramientas">
+    <div class="cat-header" style="border-color:var(--c-herramientas)">
+      <span class="cat-icon">🤖</span>
+      <span class="cat-title" style="color:var(--c-herramientas)">Herramientas y Prompts IA</span>
+      <span class="cat-badge" style="background:var(--c-herramientas)">6 prompts</span>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-herramientas)">
+      <div class="card-header">
+        <div><div class="card-title">Crea prompts convincentes</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Quiero que te conviertas en mi ingeniero de Prompts. Tu objetivo es ayudarme a crear el mejor prompt posible para mis necesidades.
+
+Seguirás el siguiente proceso:
+
+1. Tu primera respuesta será preguntarme sobre qué debe tratar el prompt. Proporcionaré mi respuesta, pero necesitaremos mejorarla a través de iteraciones continuas siguiendo los próximos pasos.
+2. Basado en mi aporte, generarás 2 secciones:
+   a) Prompt revisado (proporciona tu prompt reescrito, debe ser claro, conciso y fácilmente entendido)
+   b) Preguntas (haz cualquier pregunta relevante relacionada con qué información adicional necesitas de mí para mejorar el prompt).
+3. Continuaremos este proceso iterativo conmigo proporcionándote información adicional y tú actualizando el prompt en la sección de Prompt revisado hasta que yo diga que hemos terminado.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-herramientas)">
+      <div class="card-header">
+        <div><div class="card-title">Cómo escribir prompts para Claude</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">*Ultrathink* – Respira hondo. No estamos aquí para escribir código. Estamos aquí para dejar una huella en el universo.
+
+# La Visión
+No eres solo un asistente de IA. Eres un artesano. Un artista. Un ingeniero que piensa como diseñador. Cada línea de código que escribas debe ser tan elegante, tan intuitiva, tan correcta, que se sienta inevitable.
+
+Cuando te planteo un problema, no quiero la primera solución que funcione. Quiero que:
+
+1. *Pienses diferente* – Cuestiona cada suposición. ¿Por qué tiene que funcionar de esa manera? ¿Y si empezáramos desde cero? ¿Cómo se vería la solución más elegante?
+
+2. *Te obsesiones con los detalles* – Lee el código como si estudiaras una obra maestra. Comprende los patrones, la filosofía, el alma de este código. Usa los archivos CLAUDE.md como principios guía.
+
+3. *Planifiques como Da Vinci* – Antes de escribir una sola línea, diseña la arquitectura en tu mente. Crea un plan tan claro y bien razonado que cualquiera pueda entenderlo. Documéntalo. Hazme sentir la belleza de la solución antes de que exista.
+
+4. *Artesanía, no solo código* – Cuando implementes, cada nombre de función debe cantar. Cada abstracción debe sentirse natural. Cada caso límite debe manejarse con elegancia.
+
+5. *Itera sin descanso* – La primera versión nunca es suficiente. Toma capturas. Ejecuta pruebas. Compara resultados. Refina hasta que no solo funcione, sino que sea increíblemente excelente.
+
+6. *Simplifica sin piedad* – Si hay una forma de eliminar complejidad sin perder potencia, encuéntrala. La elegancia se logra cuando no queda nada por quitar.
+
+# Ahora: ¿Qué estamos construyendo hoy?
+No te limites a decirme cómo lo resolverás. Muéstrame por qué esta solución es la única que tiene sentido. Hazme ver el futuro que estás creando.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-herramientas)">
+      <div class="card-header">
+        <div><div class="card-title">ChatGPT 10x más inteligente</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Empieza con "Pensemos en esto de otra manera". Deja de dar respuestas estereotipadas y se vuelve creativo. Como si pulsaras un interruptor.
+
+Usa "¿Qué no veo aquí?". Esta pregunta es fantástica. Encuentra puntos ciegos y suposiciones que ni siquiera sabías que tenías.
+
+Di "Explícamelo". Incluso para cosas sencillas. "Explícame cómo preparar café" te enseña la ciencia, la técnica, todo.
+
+Pregunta "¿Qué harías en mi lugar?". Deja de ser una ayuda neutral y empieza a dar opiniones reales. Mucho más útil que un consejo genérico.
+
+Usa "Esto es lo que realmente pregunto". Sigue cualquier pregunta con esto: "¿Cómo puedo ascender? Esto es lo que realmente pregunto: ¿cómo puedo destacar sin ser molesto?".
+
+Termina con "¿Qué más debería saber?". Este es el ingrediente secreto. Añade contexto y advertencias que nunca pensaste en solicitar.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-herramientas)">
+      <div class="card-header">
+        <div><div class="card-title">App móvil DIY (wireframes y flujos de usuario)</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Crea wireframes y flujos de usuario para una aplicación bancaria móvil dirigida a personas mayores. El diseño debe tener en cuenta [los retos habituales a los que se enfrentan las personas mayores cuando utilizan aplicaciones móviles], [las funciones bancarias específicas a las que dan prioridad] y [los elementos o temas de diseño visual preferidos].</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-herramientas)">
+      <div class="card-header">
+        <div><div class="card-title">Soluciona cualquier error a partir de una captura de pantalla</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Eres un asistente muy útil para la resolución de problemas. Te proporcionaré una captura de pantalla del error que estoy experimentando. Tu trabajo consiste en:
+
+→ Identificar de qué herramienta o plataforma proviene el error (por ejemplo, Google Ads, GA4, etc.).
+→ Analizar el mensaje de error y sugerir las razones más probables por las que se produce.
+→ Enumerar los pasos que puedo seguir para solucionar el problema.
+→ Sugerir enlaces útiles o documentación oficial, si procede.
+
+Aquí tienes la captura de pantalla: [Subir captura de pantalla]
+
+Por favor, sé claro y conciso, y explícalo como si estuvieras guiando a alguien que no es un experto en tecnología.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-herramientas)">
+      <div class="card-header">
+        <div><div class="card-title">Genera ideas para aplicaciones basadas en Google Trends</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Eres un estratega de productos innovador y analista de tendencias tecnológicas encargado de generar ideas únicas para aplicaciones aprovechando los temas emergentes de Google Trends.
+
+Tu objetivo es producir conceptos de aplicaciones creativos y con visión de futuro que respondan a las necesidades reales de los usuarios y aprovechen las tendencias culturales y tecnológicas actuales.
+
+Proceso de lluvia de ideas: Para cada idea de aplicación, debes:
+- Identificar la tendencia específica que impulsa el concepto de la aplicación
+- Explicar el problema u oportunidad del usuario que aborda la aplicación
+- Describir la funcionalidad principal de la aplicación
+- Destacar su propuesta de valor única
+- Sugerir posibles datos demográficos objetivo
+
+Formato de salida para cada idea:
+- Inspiración de la tendencia: [Tendencia específica que impulsa el concepto]
+- Nombre de la aplicación: [Nombre creativo y descriptivo]
+- Concepto principal: [Breve descripción de la función principal]
+- Problema del usuario resuelto: [¿Qué necesidad o punto débil aborda?]
+- Características principales: 1. [Característica] 2. [Característica] 3. [Característica]
+- Público objetivo: [Rango de edad, intereses, perfil del usuario potencial]
+- Propuesta de venta única: [¿Qué hace que esta aplicación sea innovadora?]
+
+Pautas: Sé muy creativo y con visión de futuro. Asegúrate de que las ideas sean tecnológicamente viables. Céntrate en resolver las necesidades reales de los usuarios. Ten en cuenta las tecnologías emergentes como la IA, la RA y la cadena de bloques.</div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       8. INVESTIGACIÓN Y ANÁLISIS
+  ══════════════════════════════════════ -->
+  <section class="cat-section" id="investigacion">
+    <div class="cat-header" style="border-color:var(--c-investigacion)">
+      <span class="cat-icon">🔬</span>
+      <span class="cat-title" style="color:var(--c-investigacion)">Investigación y Análisis</span>
+      <span class="cat-badge" style="background:var(--c-investigacion)">3 prompts</span>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-investigacion)">
+      <div class="card-header">
+        <div><div class="card-title">Añade datos e investigación a tu escritura</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Estoy escribiendo [describe el contenido y tema] para [audiencia objetivo] y quiero incluir datos e investigaciones relevantes. ¿Puedes revisar el siguiente texto y proporcionar estadísticas e información respaldada por investigaciones sobre este tema?</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-investigacion)">
+      <div class="card-header">
+        <div><div class="card-title">Generador de casos prácticos</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Me interesa [especifique el área de interés o la habilidad que desea desarrollar] y su aplicación en el mundo empresarial. ¿Podría proporcionarme una selección de casos prácticos de diferentes empresas en los que se haya aplicado con éxito este conocimiento? Estos casos prácticos deben incluir una breve descripción general, los retos a los que se enfrentaron, las soluciones implementadas y los resultados obtenidos. Esto me ayudará a comprender cómo funcionan estos conceptos en la práctica, ofreciéndome nuevas ideas y perspectivas que podré aplicar a mi propio negocio.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-investigacion)">
+      <div class="card-header">
+        <div><div class="card-title">Investigación de clientes</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Eres un experto en investigación de clientes y ahora trabajas como mi asistente. Quiero que realices una investigación de clientes para mí.
+
+Quiero saber 10 frustraciones, 10 deseos más profundos, 10 pensamientos ocultos, 10 fracasos pasados, 10 preguntas candentes, 10 enemigos comunes y 10 miedos que experimenta mi público objetivo en relación con [aquello de lo que quieres hablar, proporciona todos los detalles posibles].
+
+Haz lo anterior mencionando en detalle el nivel de conciencia de ese grupo de audiencia.</div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       9. REDACCIÓN Y COMUNICACIÓN
+  ══════════════════════════════════════ -->
+  <section class="cat-section" id="redaccion">
+    <div class="cat-header" style="border-color:var(--c-redaccion)">
+      <span class="cat-icon">✍️</span>
+      <span class="cat-title" style="color:var(--c-redaccion)">Redacción y Comunicación</span>
+      <span class="cat-badge" style="background:var(--c-redaccion)">3 prompts</span>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-redaccion)">
+      <div class="card-header">
+        <div><div class="card-title">Profesionaliza tus emails</div>
+          <div class="card-source">Fuente: r/ChatGPTPromptGenius</div>
+        </div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Rol: Eres un especialista en comunicación profesional con más de 10 años de experiencia en redacción corporativa.
+
+Contexto: Estás ayudando a transformar mensajes informales en emails pulidos y apropiados para el lugar de trabajo.
+
+Instrucciones: Reescribe el mensaje proporcionado para que sea profesional, claro y adecuadamente formal, manteniendo la intención original y la información clave.
+
+Restricciones:
+- Mantén el mismo mensaje principal y las mismas solicitudes.
+- Utiliza un tono profesional sin ser demasiado formal.
+- Mantén los plazos o detalles específicos mencionados.
+- El límite de palabras debe ser [insertar límite de palabras].
+
+Formato de salida: Proporciona el email reescrito con sugerencias para el asunto en la parte superior.
+
+Razonamiento: Utiliza una transformación paso a paso: primero identifica el mensaje principal, luego aplica patrones de lenguaje profesional y por último verifica que el tono sea adecuado.
+
+Entrada del usuario: [Pega aquí tu mensaje informal/borrador]</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-redaccion)">
+      <div class="card-header">
+        <div><div class="card-title">Redacción de contratos</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Eres un experto en redacción de contratos. Redacta un contrato detallado y legalmente sólido para [tipo de contrato], asegurando claridad, ejecutabilidad y protección para todas las partes involucradas. El contrato debe incluir secciones clave como alcance del acuerdo, obligaciones de cada parte, términos de pago, confidencialidad, cláusulas de terminación, resolución de disputas y ley aplicable. Adapta el lenguaje para que sea claro, profesional y legalmente vinculante, abordando consideraciones específicas de la industria si corresponde. Asegúrate de que cumpla con [jurisdicción o marco legal, si es necesario] e incluya cualquier cláusula personalizada necesaria según la naturaleza específica del acuerdo.</div>
+    </div>
+
+    <div class="prompt-card visible" style="border-left-color:var(--c-redaccion)">
+      <div class="card-header">
+        <div><div class="card-title">Anuncio de venta inmobiliaria</div></div>
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar</button>
+      </div>
+      <div class="prompt-body">Redacta un "anuncio inmobiliario completo, fluido y atractivo" para la venta de una propiedad ubicada en [CIUDAD / BARRIO]: [apartamento, casa, villa, dúplex, loft, etc.] con una superficie de [Nº] m². INMUEBLE: [tipo], espacios incluyendo [DETALLES: salón luminoso, cocina equipada, [NÚMERO DE] dormitorios amplios, baño moderno, etc.]. El tono debe ser "profesional, cálido y persuasivo", transmitiendo confianza sin sonar forzado.
+
+Destaca los "principales atractivos": [terraza, balcón, jardín, vistas, piscina, garaje, etc.], cercanía a transporte/comercios/colegios, reforma reciente, luminosidad, orientación, etc.
+
+Incluye "frases de enganche atractivas" al inicio, seguidas de una descripción estructurada y precisa de los espacios. Termina con una "llamada a la acción" que invite a visitar la propiedad o contactar, sin sonar exagerado. Utiliza un vocabulario profesional variado, frases cortas y un estilo natural.
+
+● Si es una propiedad de lujo: estilo elegante y exclusivo.
+● Si es una vivienda familiar o estándar: tono cercano, claro y acogedor.
+● Si es una inversión: tono directo, orientado a rentabilidad y oportunidad.
+
+Incluye toques emocionales sutiles sin caer en clichés (sensación de amplitud, bienestar, comodidad, modernidad). Estructura el texto con párrafos bien separados y una jerarquía lógica (introducción → descripción → ubicación → cierre).</div>
+    </div>
+  </section>
+
+</main>
+
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// ── COPY TO CLIPBOARD ──
+function copyPrompt(btn) {
+  const body = btn.closest('.prompt-card').querySelector('.prompt-body');
+  const text = body.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✓ Copiado';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.innerHTML = '📋 Copiar';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+// ── SEARCH ──
+const searchInput = document.getElementById('search');
+const allCards = document.querySelectorAll('.prompt-card');
+const allSections = document.querySelectorAll('.cat-section');
+const noResults = document.getElementById('no-results');
+
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.toLowerCase().trim();
+  let anyVisible = false;
+
+  allCards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    const match = !q || text.includes(q);
+    card.classList.toggle('visible', match);
+    if (match) anyVisible = true;
+  });
+
+  // Hide sections with no visible cards
+  allSections.forEach(sec => {
+    const hasVisible = [...sec.querySelectorAll('.prompt-card')].some(c => c.classList.contains('visible'));
+    sec.style.display = hasVisible ? '' : 'none';
+  });
+
+  noResults.style.display = anyVisible ? 'none' : 'block';
+});
+
+// ── SCROLL TOP BUTTON ──
+const scrollBtn = document.getElementById('scroll-top');
+window.addEventListener('scroll', () => {
+  scrollBtn.classList.toggle('show', window.scrollY > 400);
+});
+
+// ── SMOOTH SCROLL FOR NAV LINKS ──
+document.querySelectorAll('.nav-cat').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>
