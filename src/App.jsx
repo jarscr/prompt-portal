@@ -8,6 +8,7 @@ import StatsBar from './components/StatsBar';
 import CategorySection from './components/CategorySection';
 import AdPlacement from './components/AdPlacement';
 import ScrollToTop from './components/ScrollToTop';
+import { Analytics } from '@vercel/analytics/react';
 
 const AD_AFTER_SECTION = 3;
 
@@ -75,6 +76,7 @@ export default function App() {
       </main>
 
       <ScrollToTop />
+      <Analytics />
     </div>
   );
 }
