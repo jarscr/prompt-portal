@@ -11,7 +11,8 @@ export default function Sidebar({ categories, promptCounts, totalPrompts, search
   return (
     <aside className="sidebar">
       <div className="sidebar-header">
-        <h1>📋 Prompts para IA</h1>
+        <img src="/logo.png" alt="Prompt Portal" className="sidebar-logo" />
+        <h1>Prompts para IA</h1>
         <p>{totalPrompts} prompts · {categories.length} categorías</p>
       </div>
 
