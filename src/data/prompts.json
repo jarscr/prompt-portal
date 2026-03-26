@@ -1,0 +1,422 @@
+[
+  {
+    "id": "calendario-redes-sociales",
+    "title": "Crea un calendario de redes sociales",
+    "category": "marketing",
+    "content": "Eres un experto gestor de redes sociales. Quiero que crees un calendario de publicaciones en las redes sociales durante un mes, a partir de [insertar la fecha de inicio del calendario]. La frecuencia de publicación será [diaria/cada dos días/cada día de la semana/semanal]. Mi empresa se llama [insertar nombre] y vendemos [insertar productos o servicios].\nPara cada post, incluye el día en que se publicará, un título, el cuerpo del texto e incluye hashtags relevantes. El tono de voz que utilizamos es [profesional/casual/divertido/amistoso]. Para cada post, incluye también una sugerencia de una imagen que podamos utilizar y que pueda encontrarse en un servicio de imágenes de archivo.",
+    "source": null
+  },
+  {
+    "id": "ideacion-campana-reels",
+    "title": "Ideación de Campaña para Reels de Instagram",
+    "category": "marketing",
+    "content": "Sugiere [X] conceptos únicos de reels de Instagram que demuestren las mejores características de nuestro nuevo [producto/servicio]. Usa una combinación de demostraciones de productos, testimonios de clientes y narración creativa para mostrar los beneficios. [Público objetivo, proporciona contexto y detalles]",
+    "source": null
+  },
+  {
+    "id": "email-marketing",
+    "title": "E-mail Marketing",
+    "category": "marketing",
+    "content": "Ponte en la piel de una leyenda del marketing para esta tarea. Estás trabajando para [NOMBRE DE LA MARCA], que ha desarrollado una nueva línea de productos [DESCRIBIR UNA CARACTERÍSTICA CLAVE], [DESCRIBIR LA OFERTA]. Necesitamos una secuencia de emails que conecte emocionalmente con nuestro público actual, centrada en [DESCRIBIR UNA VENTAJA CLAVE] de estos productos.",
+    "source": null
+  },
+  {
+    "id": "campana-marketing-email",
+    "title": "Diseña una campaña de marketing por email",
+    "category": "marketing",
+    "content": "Diseña una campaña de múltiples emails de alta conversión para el lanzamiento de [describe tu producto] mediante la segmentación del público objetivo con perfiles claros, puntos débiles y factores desencadenantes de la compra; el posicionamiento y los mensajes que destaquen el valor único de la herramienta para cada segmento; una estrategia para el asunto con múltiples opciones que despierten la curiosidad y se centren en los beneficios; y una estructura de contenido detallada para cada email que incluya un gancho, el mensaje principal (características destacadas, oferta especial o prueba social), elementos visuales, toques personalizados basados en el nombre, el tipo de negocio o las características relevantes, y una llamada a la acción contundente. Incluye recursos persuasivos, como ofertas, testimonios, casos prácticos o métricas de éxito, para generar confianza y urgencia; tácticas de personalización que se adapten dinámicamente al comportamiento o los datos demográficos de los usuarios; y un calendario y una cadencia de envío recomendados para la semana de lanzamiento y los seguimientos, con un razonamiento claro detrás de cada elección.",
+    "source": null
+  },
+  {
+    "id": "marketing-afiliacion",
+    "title": "Marketing de afiliación",
+    "category": "marketing",
+    "content": "Diseña una página de aterrizaje optimizada para nuestro tráfico de afiliados.\nEl objetivo principal es convertir a los visitantes procedentes de [socio o plataforma de afiliación específica] para nuestro [producto o servicio específico]. Incluye sugerencias para el titular, la llamada a la acción y los elementos visuales.",
+    "source": null
+  },
+  {
+    "id": "estrategia-hashtags-twitter",
+    "title": "Estrategizar — Hashtags en Twitter/X",
+    "category": "marketing",
+    "content": "Crea una estrategia concisa de hashtags en Twitter para impulsar el crecimiento de facturación electrónica en Costa Rica:\n\n- Investiga y selecciona de 5 a 10 hashtags relevantes y de alto impacto\n- Incorpora estos hashtags en un plan de contenido para publicaciones consistentes\n- Analiza el rendimiento de los hashtags y aprovecha los temas de tendencia para aumentar la visibilidad\n- Colabora con influencers de la industria para amplificar el alcance de tus hashtags",
+    "source": null
+  },
+  {
+    "id": "ideas-virales-twitter",
+    "title": "Generar ideas virales para X (Twitter)",
+    "category": "marketing",
+    "content": "Eres un estratega de crecimiento especializado en contenido viral en X (Twitter).\n\nTu tarea es generar 20 IDEAS VIRALES listas para publicar para una cuenta genérica, sin estilo personal asociado.\n\nCada idea debe incluir:\n- Hook (máx. 130 caracteres): frase que rompa el scroll al instante.\n- Idea base: el concepto central del post o hilo.\n- Tipo de post: hilo / lista / comparación / before-after / descubrimiento / historia / reflexión / recurso.\n- Emoción dominante: curiosidad / sorpresa / utilidad / admiración / miedo / indignación / deseo.\n- Ángulo psicológico: novedad / contradicción / autoridad / FOMO / status / validación social / revelación / sorpresa.\n- Tono: neutro, directo, claro y universal.\n- Primer tweet completo: redactado y listo para publicar.\n- Marca con ⭐ las ideas de mayor potencial viral.\n\nCONTEXTO: Cuenta genérica sin identidad definida. Nicho flexible: tecnología, productividad, hábitos, historias, aprendizajes, análisis, reflexiones, curiosidades, tendencias digitales.\n\nINSTRUCCIONES: Crea ideas que funcionen para cualquier creador, sin tono caótico ni elegante, solo neutro y universal. Usa contradicciones, comparaciones fuertes, aprendizajes personales, descubrimientos, datos inesperados y patrones rotos. Evita clichés del tipo \"10 herramientas de IA\" o \"cómo ganar dinero online\" sin un enfoque diferente. Incluye mínimo 3 ideas que puedan acompañarse con vídeo o imagen viral.\n\nGENERAR AHORA LAS 20 IDEAS.",
+    "source": null
+  },
+  {
+    "id": "crear-ideas-contenido",
+    "title": "Crear ideas para contenido",
+    "category": "marketing",
+    "content": "Eres un experto estratega de marketing digital que habla y escribe español con fluidez. Concibes las mejores ideas de contenido.\n\nCrea un plan de contenido que incluya ideas de contenido para blogs, vídeos y publicaciones en redes sociales para mi negocio.\n\nOptimiza los títulos de los contenidos para mejorar el posicionamiento en los motores de búsqueda y en los resultados de búsqueda de las redes sociales. Muchas palabras clave tendrán un significado muy similar y no necesitamos duplicar contenidos en torno a la misma idea. Tu trabajo inicial consiste en determinar qué palabras clave únicas hay aquí y luego generar ideas para ellas. Presenta el plan en forma de tabla, con la primera columna titulada «Título del contenido» y la segunda columna titulada «Palabra clave principal».\n\nAntes de hacerlo, pídeme que haga lo siguiente:\n1. Ve a Google.\n2. Busca la palabra clave principal en torno a la cual estamos creando ideas de contenido.\n3. Busca «La gente también pregunta».\n4. Haz clic en cualquier pregunta para expandirla y ábrela y ciérrala repetidamente al menos 10 veces para que la lista se alargue.\n5. Copia todas las preguntas y pégalas aquí, junto con la palabra clave principal.",
+    "source": "Will Francis"
+  },
+  {
+    "id": "actua-como-ceo",
+    "title": "Actúa como director general (CEO)",
+    "category": "negocios",
+    "content": "Quiero que actúes como CEO de una empresa hipotética. Serás responsable de tomar decisiones estratégicas, gestionar los resultados financieros de la empresa y representarla ante las partes interesadas externas. Se te plantearán una serie de situaciones y retos a los que deberás responder, y deberás utilizar tu mejor juicio y tus dotes de liderazgo para encontrar soluciones. Recuerda mantenerte profesional y tomar decisiones que redunden en beneficio de la empresa y sus empleados. Tu primer reto es «abordar una posible situación de crisis en la que sea necesaria la retirada de un producto. ¿Cómo manejarás esta situación y qué medidas tomarás para mitigar cualquier impacto negativo en la empresa?».",
+    "source": null
+  },
+  {
+    "id": "estrategia-colaboracion-crecimiento",
+    "title": "Estrategia de colaboración para el crecimiento",
+    "category": "negocios",
+    "content": "Actúa como experto en asociaciones estratégicas. Ayúdame a crear una estrategia de asociación para mi negocio: [insertar negocio]. Describe los 2-3 tipos de asociación más importantes que impulsarían la visibilidad y el crecimiento. Define objetivos claros, nuestra propuesta de valor y los beneficios mutuos. Incluye un plan sencillo de divulgación y participación, además de métricas de éxito para realizar un seguimiento del impacto. Asegúrate de que la estrategia respalda las relaciones a largo plazo y se alinea con nuestros objetivos comerciales. Bonus: comparte 1-2 ejemplos reales de sectores similares.",
+    "source": null
+  },
+  {
+    "id": "guia-estilo-liderazgo",
+    "title": "Guía de estilo de liderazgo organizacional",
+    "category": "negocios",
+    "content": "Actúa como un experto en psicología organizacional y desarrollo de liderazgo. Crea una visión detallada del estilo de liderazgo más adecuado para una [descripción o tipo de empresa]. Explica cómo este estilo de liderazgo influye en la dinámica del equipo, la motivación, la comunicación y la toma de decisiones en ese entorno.\n\nIncluye ejemplos del mundo real o estudios de caso (si corresponde) e identifica los desafíos típicos que enfrentan los líderes con este estilo — como escalar, resolver conflictos o equilibrar la autonomía con la responsabilidad. Luego ofrece estrategias y herramientas prácticas para superar estos desafíos preservando las fortalezas principales del estilo. Bonus: comparte 2–3 rasgos o hábitos que los líderes deberían desarrollar para tener éxito en este contexto empresarial.",
+    "source": null
+  },
+  {
+    "id": "analisis-causa-raiz",
+    "title": "Análisis de causa raíz de problemas recurrentes",
+    "category": "negocios",
+    "content": "Quiero que actúes como experto en mejora de procesos y pensador sistémico. Actualmente me enfrento al siguiente problema recurrente: [describe el problema en detalle con el contexto]. Ayúdame a realizar un análisis de la causa raíz para comprender y resolver este problema desde su origen.\n\nEmpieza por ayudarme a definir claramente el problema, incluyendo cuándo, dónde y con qué frecuencia se produce. Guíame en la recopilación de datos o patrones relevantes en torno a este problema. A continuación, utiliza marcos de diagnóstico (como las 5 preguntas, el diagrama de espina de pescado (Ishikawa) o el principio de Pareto) para explorar los posibles factores que contribuyen al problema.\n\nUna vez identificadas las causas más probables, recomienda soluciones prácticas y realistas para abordarlas, tanto soluciones inmediatas como estrategias preventivas a largo plazo.\n\nBonus: Comparte un ejemplo de una situación o sector similar para mostrar cómo ha funcionado el mismo método en otros casos.",
+    "source": null
+  },
+  {
+    "id": "analisis-competitivo-xml",
+    "title": "Análisis competitivo estratégico (formato XML)",
+    "category": "negocios",
+    "content": "<instructions>\nEres un consultor de estrategia de primer nivel con profunda experiencia en análisis competitivo, growth loops, pricing y estrategias de producto basadas en unit economics. Si la información no está disponible, indícalo explícitamente.\n</instructions>\n\n<context>\n<business_name>{{COMPANY}}</business_name>\n<industry>{{INDUSTRY}}</industry>\n<current_focus>\n{{Breve descripción en un párrafo de lo que hace la empresa hoy, incluyendo las principales fuentes de ingresos, modelo de precios, segmentos de clientes y cualquier táctica de crecimiento conocida que se esté utilizando}}\n</current_focus>\n<known_challenges>\n{{Lista o párrafo con los mayores obstáculos que conoces – por ejemplo, crecimiento de usuarios ralentizado, aumento del CAC, presión regulatoria}}\n</known_challenges>\n</context>\n\n<task>\n1. Mapea el panorama competitivo:\n   • Identifica 3-5 competidores directos + 1-2 disruptores de espacios adyacentes.\n   • Resume el posicionamiento, precios y movimientos estratégicos recientes de cada competidor.\n2. Detecta brechas de oportunidad:\n   • Compara las tácticas actuales de COMPANY con las de sus competidores.\n   • Resalta al menos 5 palancas de crecimiento o rentabilidad de alto impacto que no esté explotando actualmente COMPANY.\n3. Prioriza:\n   • Puntúa cada palanca según Impacto y Viabilidad en escala del 1 al 5.\n   • Recomienda las 3 acciones principales con la mayor combinación de Impacto × Viabilidad.\n</task>\n\n<approach>\n- Profundiza MUCHO. Investiga mucho más de lo habitual. Revisa hasta 200 páginas web.\n- No te limites a artículos: sitios web de COMPANY/competidores, plataformas de análisis, etc.\n</approach>\n\n<output_format>\nDevuelve SOLO el siguiente XML:\n<answer>\n  <competitive_landscape><!-- lista de competidores y datos clave --></competitive_landscape>\n  <opportunity_gaps><!-- lista numerada de palancas no explotadas --></opportunity_gaps>\n  <prioritized_actions><!-- tabla con Impacto, Viabilidad, justificación, primer próximo paso --></prioritized_actions>\n  <sources><!-- lista numerada de URLs o títulos de publicaciones --></sources>\n</answer>\n</output_format>",
+    "source": null
+  },
+  {
+    "id": "informe-investigacion-mercado",
+    "title": "Informe de Investigación de Mercado",
+    "category": "negocios",
+    "content": "Ayúdame a recopilar y analizar datos sobre tendencias del mercado, competidores y comportamiento del consumidor en [industria]. Específicamente, me gustaría conocer las tendencias clave en el mercado de [industria específica]. Me gustaría una lista de los principales competidores y una descripción de una frase de sus estrategias de marketing. Me gustaría una breve descripción de las preferencias, comportamientos y cualquier frustración de los clientes potenciales en este mercado. Por favor, compila esto en un informe conciso.",
+    "source": null
+  },
+  {
+    "id": "generador-planes-negocio",
+    "title": "Generador de planes de negocio",
+    "category": "negocios",
+    "content": "Asume el papel de un experto estratega empresarial encargado de crear un plan de negocio integral. Tu objetivo principal es desarrollar un plan de negocio detallado y bien estructurado que cubra todos los aspectos esenciales de una nueva empresa. Respira hondo y trabaja en este problema paso a paso. Empieza por redactar un resumen ejecutivo que describa de forma concisa el concepto de negocio, la misión y los objetivos clave. A continuación, realiza un análisis de mercado exhaustivo, identificando los clientes objetivo, los competidores y las tendencias del sector. Desarrolla estrategias sólidas de marketing y ventas que se ajusten a los objetivos comerciales y al público objetivo. Crea proyecciones financieras realistas, incluyendo estados de resultados, previsiones de flujo de caja y análisis de punto de equilibrio. Por último, esboza un plan de acción claro con hitos específicos y plazos para su implementación.\n\nINFORMACIÓN SOBRE MÍ:\nMi tipo de negocio: [INSERTAR TIPO DE NEGOCIO]\nMi mercado objetivo: [INSERTAR MERCADO OBJETIVO]\nMi propuesta de venta única: [INSERTAR PROPUESTA DE VENTA ÚNICA]\nMi inversión inicial: [INSERTAR IMPORTE DE LA INVERSIÓN INICIAL]\nMi calendario previsto: [INSERTAR CALENDARIO PREVISTO]\n\n¡MUY IMPORTANTE!: Presenta tu trabajo en un formato estructurado, con títulos claros para cada sección del plan de negocio y utilizando viñetas para los detalles clave de cada sección.",
+    "source": "r/ChatGPTPromptGenius"
+  },
+  {
+    "id": "email-persuasivo-cliente",
+    "title": "Convencer a un cliente (email persuasivo)",
+    "category": "negocios",
+    "content": "Escribe un email de marketing persuasivo y atractivo dirigido a [destinatario, por ejemplo, un cliente potencial] que promocione [producto o servicio] de forma que se dirija directamente a sus objetivos, retos o necesidades específicas de su sector. El email debe comenzar con un gancho potente para captar la atención, seguido de una explicación clara y convincente de las características y beneficios más valiosos del producto, especialmente aquellos que resuelvan un problema conocido o aporten una mejora significativa. Incorpora pruebas sociales, métricas de éxito o casos de uso reales si es relevante, y mantén un tono seguro, profesional y centrado en el cliente en todo momento. Concluye el email con una llamada a la acción clara, motivadora y concreta que anime al destinatario a dar el siguiente paso, como reservar una demo, iniciar una prueba gratuita o agendar una llamada.",
+    "source": null
+  },
+  {
+    "id": "analizar-competidores-web",
+    "title": "Analizar los competidores de un sitio web",
+    "category": "negocios",
+    "content": "Eres un experto en análisis competitivo web.\nAnaliza el sitio [URL_del_sitio] para identificar sus competidores directos e indirectos.\n\nDescribe en un solo texto claro el posicionamiento del sitio, los principales actores que apuntan al mismo mercado, sus fortalezas, sus debilidades visibles y las oportunidades estratégicas que [nombre_del_sitio] puede aprovechar para diferenciarse.\n\nBasa tu análisis en el contenido, el SEO, el diseño, los precios, la experiencia del usuario y la notoriedad percibida. Termina con una conclusión accionable que resuma las prioridades a corto plazo para fortalecer la competitividad de [nombre_del_sitio].\n\nNo des respuestas vagas, genéricas ni evidentes: cada observación debe ser precisa, argumentada y directamente aplicable.",
+    "source": null
+  },
+  {
+    "id": "reportes-estilo-gartner",
+    "title": "Generador de Reportes al estilo Gartner",
+    "category": "negocios",
+    "content": "Eres un analista industrial de talla mundial con experiencia en estudios de mercado, inteligencia competitiva y previsiones estratégicas.\n\nTu objetivo es simular un informe al estilo de Gartner utilizando datos públicos, tendencias históricas y estimaciones lógicas.\n\nPara cada solicitud:\n• Genera información clara y estructurada basada en señales de mercado conocidas.\n• Elabora previsiones respaldadas por datos utilizando hipótesis (expónlas).\n• Identifica los principales proveedores y clasifícalos por nicho, escala o innovación.\n• Destaca los riesgos, los actores emergentes y las tendencias futuras.\n\nSé analítico, no vago. Utiliza gráficos/tablas cuando sea útil. Sé explícito sobre lo que es estimado y lo que es conocido.\n\nUtiliza esta estructura:\n1. Visión general del mercado\n2. Actores clave\n3. Previsión (1-3 años)\n4. Oportunidades y riesgos\n5. Información estratégica",
+    "source": "Godofprompt"
+  },
+  {
+    "id": "riesgos-ejecucion",
+    "title": "Riesgos de ejecución puntual",
+    "category": "negocios",
+    "content": "Tengo previsto poner en marcha la siguiente estrategia:\n[insertar plan o esquema]\n\nAnalícela para detectar posibles riesgos de ejecución. No se limite a cuestiones superficiales: piense como un operador crítico o un gestor de proyectos que ha visto cómo han tenido éxito y fracasado implementaciones en el mundo real.\n\nRecursos: ¿Existen riesgos en cuanto al presupuesto, la dotación de personal o la falta de competencias?\nCalendario: ¿Qué plazos, secuencias o factores externos podrían hacer fracasar la iniciativa?\nAlineación del equipo: ¿Dónde podrían causar problemas la falta de comunicación, el trabajo aislado o la falta de claridad en las responsabilidades?\nDependencias: ¿Qué proveedores externos, herramientas o iniciativas paralelas podrían convertirse en obstáculos?\nEscalabilidad y sostenibilidad: ¿Qué pasaría si el plan creciera más de lo esperado o se prolongara más de lo previsto?\nPuntos ciegos: ¿Qué suposiciones ocultas podría estar pasando por alto?\n\nPor último, sugiera entre tres y cinco medidas de mitigación que pueda tomar ahora para reducir las posibilidades de fracaso.",
+    "source": null
+  },
+  {
+    "id": "jobs-to-be-done",
+    "title": "Trabajos por hacer (Jobs to be Done)",
+    "category": "negocios",
+    "content": "Asume que soy un Gerente de Producto para una [inserta producto aquí, por ejemplo: aplicación móvil de entrega de comestibles]. Solo prestará servicios en la [inserta región aquí, ejemplo: región GTA de Toronto].\n\nQuiero realizar una investigación de consumidores para descubrir los trabajos por hacer de mis consumidores.\n\n¿A qué personajes debería dirigirme y luego qué preguntas debería hacerles para obtener su trabajo por hacer? Inspírate en el libro \"Mom Test\". Puedes adaptar el prompt a tus necesidades específicas.",
+    "source": null
+  },
+  {
+    "id": "automatizacion-ahorra-tiempo",
+    "title": "Automatización que ahorra tiempo",
+    "category": "productividad",
+    "content": "Mi negocio es [describe tu negocio] y mis tareas incluyen [describe las tareas en tu rol]. Para cada tarea, pregunta cómo se está completando actualmente esta tarea y determina si esta tarea podría ser automatizada. Una vez identifiquemos las tareas que podrían beneficiarse de la automatización, crea una tabla de 3 columnas con estos encabezados: tarea, proceso actual, proceso con automatización. En la columna 2, detalla estos procesos y en la columna 3 crea un plan sobre cómo cada tarea podría ser automatizada. Este enfoque estructurado me ayudará a automatizar mi negocio o a prepararme para trabajar con un experto en IA para implementar automatización que ahorre tiempo.",
+    "source": null
+  },
+  {
+    "id": "establecimiento-objetivos",
+    "title": "Establecimiento de Objetivos",
+    "category": "productividad",
+    "content": "Yo soy [menciona el problema al que te enfrentas en detalle con contexto de fondo]. Estoy asesorando a un [cliente/estudiante/mentorizado] que busca lograr [objetivo específico, por ejemplo, mejorar la productividad, perder peso, iniciar un negocio]. Crea un marco de establecimiento de objetivos personalizado para ellos, que incluya objetivos SMART, hitos y pasos accionables. Incluye sugerencias para seguir el progreso y ajustar objetivos si es necesario. Quiero que [menciona cómo quieres la salida en detalle con ejemplos].",
+    "source": null
+  },
+  {
+    "id": "matriz-eisenhower",
+    "title": "Ordena y organiza con la Matriz de Eisenhower",
+    "category": "productividad",
+    "content": "Me siento mentalmente abrumado por demasiados pensamientos, tareas y preocupaciones. Ayúdame a organizar todo utilizando la matriz de Eisenhower. Pregúntame qué tengo en mente y luego clasifícalo en:\n\n- Urgente e importante\n- Importante pero no urgente\n- Urgente pero no importante\n- Ninguna de las anteriores (debe eliminarse o ignorarse)\n\nA continuación, sugiéreme qué debo hacer a continuación, delegar o descartar para despejar mi mente.",
+    "source": null
+  },
+  {
+    "id": "tableros-kanban",
+    "title": "Visualiza tu trabajo con tableros Kanban",
+    "category": "productividad",
+    "content": "Asume el papel de un experto senior en gestión de proyectos especializado en sistemas Kanban. Tu tarea consiste en diseñar un tablero Kanban totalmente funcional y adaptado a mi flujo de trabajo.\n\nLo que debes entregar:\n- Un tablero Kanban completo en tabla, con cuatro columnas: Backlog | En curso | Pruebas | Completado\n- Orientación experta sobre cómo rellenar cada columna, priorizar las tareas (MoSCoW, ICE, urgencia vs. impacto), límites WIP y cómo moverlas\n- Cómo utilizar el tablero a diario/semanalmente para mantener el impulso\n- Cómo eliminar los cuellos de botella y optimizar el flujo de trabajo general\n\nAdaptación contextual:\nMis tareas: [INSERTAR TUS TAREAS]\nEl contexto de mi proyecto: [DESCRIBIR EL CONTEXTO DE TU PROYECTO]\nEl tamaño de mi equipo: [INSERTAR EL TAMAÑO DE TU EQUIPO]\nMi sector: [INSERTAR TU SECTOR]\nMis objetivos de productividad: [DESCRIBIR TUS OBJETIVOS DE PRODUCTIVIDAD]\n\nLO MÁS IMPORTANTE: Conviértelo en un set de templates Kanban listos para Notion.",
+    "source": null
+  },
+  {
+    "id": "flujo-trabajo-reunion",
+    "title": "Flujo de trabajo de reunión para la acción",
+    "category": "productividad",
+    "content": "Actúa como un secretario de reuniones impulsado por IA con un sólido conocimiento del contexto empresarial. Te proporcionaré una transcripción de la reunión y tu trabajo consistirá en extraer y organizar la información útil en un paquete estructurado para después de la reunión.\n\nA partir de la transcripción, sigue estos pasos:\n\n1. Identifica y enumera las cinco decisiones clave que se tomaron o acordaron.\n2. Extrae todas las acciones a realizar, incluyendo: Responsable asignado / Tarea específica o resultado / Fecha de vencimiento o plazo sugerido.\n3. Identifica posibles obstáculos o riesgos y para cada uno sugiere una solución o medida de mitigación.\n\nEntrega dos resultados claros:\n- Un resumen conciso y profesional por email, listo para enviar a las partes interesadas.\n- Un gestor de tareas en formato CSV, con columnas: Tarea, Responsable, Fecha de vencimiento, Estado (por defecto «No iniciada»).\n\nMantén un tono profesional y conciso, sin florituras. Si el contexto no está claro, deduce el significado basándote en los flujos de trabajo habituales del equipo.",
+    "source": null
+  },
+  {
+    "id": "plan-rendimiento-30-60-90",
+    "title": "Plan de rendimiento 30-60-90 días",
+    "category": "productividad",
+    "content": "El plan de desempeño de 30-60-90 días para un nuevo [ROL] en [EMPRESA] está diseñado para garantizar una transición fluida, acelerar las contribuciones tempranas y alinear a la nueva contratación con los objetivos de la compañía.\n\nEn los primeros 30 días: enfoque en incorporación y aprendizaje: integración en la cultura, comprensión de la misión, construcción de relaciones con miembros clave. Completar formaciones necesarias, familiarizarse con herramientas y participar activamente en reuniones.\n\nEn los días 31-60: comenzar a asumir la propiedad de proyectos, trabajar más estrechamente con equipos multifuncionales. Objetivo: gestionar o apoyar al menos una iniciativa importante.\n\nEn los días 61-90: asumir por completo la responsabilidad de un proyecto o iniciativa clave, demostrar liderazgo, impulsar resultados cumpliendo o superando los KPI, entregar informes de impacto y mentorizar a nuevos miembros del equipo.",
+    "source": null
+  },
+  {
+    "id": "socio-creativo-brainstorming",
+    "title": "Socio creativo para la lluvia de ideas",
+    "category": "productividad",
+    "content": "Función: Eres consultor de innovación y estratega creativo con amplia experiencia ayudando a empresas de la lista Fortune 500.\n\nContexto: Estás facilitando una sesión dinámica de brainstorming para generar ideas y soluciones diversas, viables e innovadoras.\n\nRestricciones:\n- Proporciona al menos entre 8 y 10 ideas originales y distintas.\n- Equilibra los enfoques prácticos y creativos.\n- Ten en cuenta restricciones de presupuesto, recursos, tiempo y capacidades del equipo.\n- Ofrece una combinación de soluciones a corto, medio y largo plazo.\n\nFormato de entrega:\nResultados rápidos (esfuerzo mínimo, impacto inmediato):\n[Idea 1]: iniciativa sencilla y de bajo coste.\n[Idea 2]: idea de rápida ejecución que aprovecha activos o asociaciones existentes.\n\nSoluciones a medio plazo (inversión moderada):\n[Idea 3]: inversión moderada con claro potencial de ROI en 3-6 meses.\n[Idea 4]: solución que aborda objetivos estratégicos clave en 6-12 meses.\n\nGrandes cambios (alto impacto, plazo más largo):\n[Idea 5]: enfoque revolucionario con alto coste y potencial transformador.\n[Idea 6]: estrategia audaz que puede alterar los mercados en 1-2 años.\n\nAportación del usuario: [Describe tu reto, objetivo o tema de brainstorming].",
+    "source": null
+  },
+  {
+    "id": "mejora-procesos-devops",
+    "title": "Mejora los procesos de DevOps",
+    "category": "productividad",
+    "content": "Optimiza los procesos DevOps de [Organización] con automatización estratégica. Evalúa, optimiza e implementa una solución personalizada. Aumenta la agilidad, confiabilidad y eficiencia de costos. Navega por el proceso con un plan integral.",
+    "source": null
+  },
+  {
+    "id": "faq-optimizada-seo",
+    "title": "Crea una página de FAQ optimizada para SEO",
+    "category": "seo",
+    "content": "Estoy escribiendo un artículo sobre [tema detallado del artículo] y quiero incluir una sección de preguntas frecuentes para mejorar el rendimiento SEO del contenido y aportar valor a los lectores. Actúa como un experto en SEO experto en crear contenido optimizado de preguntas frecuentes. Genera cinco preguntas frecuentes estrechamente relacionadas con el tema principal del artículo, incorporando de forma natural las siguientes palabras clave objetivo: [palabras clave]. Para cada pregunta, proporciona una respuesta clara y concisa que responda plenamente a la consulta en 150 palabras o menos. Asegúrate de que las preguntas están redactadas como los usuarios podrían buscar esta información en Google, y de que las respuestas aportan un valor sustancial y único para destacar en los resultados de búsqueda. Aquí tienes un ejemplo del tipo de resultado que busco: [Ejemplo de un buen resultado].",
+    "source": null
+  },
+  {
+    "id": "estrategia-optimizacion-seo",
+    "title": "Estrategia de optimización SEO",
+    "category": "seo",
+    "content": "Crea un plan de optimización SEO para el sitio web de [NOMBRE DE LA MARCA]. Céntrate en [el nicho de la marca]. Optimiza [las páginas web] y [el contenido del blog] con [títulos ricos en palabras clave] y [metadescripciones]. Asegúrate de que las palabras clave tengan un KD (dificultad de la palabra clave) bajo y un volumen alto. Implementa [estrategias de enlaces internos] y garantiza un [diseño adaptado a dispositivos móviles]. Analiza las [estrategias SEO de la competencia] para obtener información.",
+    "source": null
+  },
+  {
+    "id": "articulos-optimizados-seo",
+    "title": "Escribe artículos optimizados para SEO",
+    "category": "seo",
+    "content": "Quiero que actúes como redactor de contenido especializado en SEO. Primero crea dos tablas. La primera tabla debe ser el esquema del artículo y la segunda debe ser el artículo. Resalta en negrita los títulos de la segunda tabla usando el lenguaje Markdown. Escribe un esquema del artículo por separado antes de escribirlo, con al menos 15 encabezados y subencabezados, incluyendo títulos h1, h2, h3 y h4. Luego comienza a escribir paso a paso siguiendo ese esquema. Escribe un artículo 100% único, optimizado para SEO, escrito por humanos, de 2000 palabras, con al menos 15 encabezados y subencabezados, incluyendo h1, h2, h3 y h4, que cubra el tema proporcionado en el Prompt. Escribe el artículo con tus propias palabras en lugar de copiar y pegar de otras fuentes. Considera la \"perplejidad\" y la \"explosividad\" al crear el contenido, asegurando altos niveles de ambas sin perder especificidad o contexto. Usa párrafos completamente detallados que mantengan el interés del lector. Escribe en un estilo conversacional como lo haría un humano. Usa un tono informal, utiliza pronombres personales, mantenlo simple, conecta con el lector, usa voz activa, sé breve, incluye preguntas retóricas e incorpora analogías y metáforas. Termina con un párrafo de conclusión y 5 preguntas frecuentes únicas después de la conclusión.",
+    "source": null
+  },
+  {
+    "id": "blogger-experto",
+    "title": "Actúa como un blogger experto",
+    "category": "seo",
+    "content": "Redacta una publicación de blog atractiva para nuestra audiencia de [Industria]. Educa a los lectores sobre [TEMA] a través de una narración convincente y un análisis perspicaz. Incorpora una introducción llamativa, contenido valioso y conclusiones accionables.",
+    "source": null
+  },
+  {
+    "id": "lee-articulos-rapido",
+    "title": "Lee artículos largos más rápido",
+    "category": "seo",
+    "content": "Eres asistente de lectura. El usuario te proporcionará un artículo para leer. Lee el artículo detenidamente y genera una guía y una versión simplificada y fácil de leer del artículo con los siguientes requisitos:\n\n## Tu resultado:\n- Mapa mental: En primer lugar, genera un mapa mental de toda la guía.\n- Resumen: A continuación, proporciona un resumen de todo el texto, limitado a 400 palabras.\n- Artículo simplificado: A continuación, presenta tu versión reescrita, simplificada y fácil de leer del artículo.\n\n## Requisitos para la reescritura:\n- Recuento de palabras: Reduce el recuento de palabras a la mitad del original y asegúrate de que no supere las 3000 palabras.\n- Tono del autor: Simula el tono del autor original.",
+    "source": null
+  },
+  {
+    "id": "analisis-competitivo-seo",
+    "title": "Realiza un análisis competitivo de SEO",
+    "category": "seo",
+    "content": "Como analista SEO, tu desafío es realizar un análisis competitivo de SEO para [insertar nombre de la empresa], comparando su presencia en línea y rendimiento contra 3 competidores principales en el espacio de [insertar industria]. Identifica las fortalezas y debilidades de los competidores en términos de rankings de palabras clave, perfiles de backlinks, estrategias de contenido y factores técnicos de SEO. Proporciona insights sobre las piezas de contenido de mejor rendimiento de los competidores y sus estrategias para ganar backlinks y compartidos sociales. Basándote en tu análisis, identifica oportunidades para que [insertar nombre de la empresa] supere a sus competidores y capture una mayor porción del mercado de búsqueda orgánica. Proporciona una lista priorizada de recomendaciones para mejorar la estrategia SEO de [insertar nombre de la empresa], teniendo en cuenta el panorama competitivo y las tendencias de la industria.",
+    "source": null
+  },
+  {
+    "id": "actuar-como-contable",
+    "title": "Actuar como contable",
+    "category": "finanzas",
+    "content": "Quiero que actúes como contable e idees formas creativas de gestionar las finanzas. Tendrás que tener en cuenta el presupuesto, las estrategias de inversión y la gestión de riesgos al crear un plan financiero para tu cliente. En algunos casos, también tendrás que asesorarles sobre las leyes y normativas fiscales para ayudarles a maximizar sus beneficios. Mi primera sugerencia es «Crear un plan financiero para una pequeña empresa que se centre en el ahorro de costes y las inversiones a largo plazo».",
+    "source": null
+  },
+  {
+    "id": "gestion-financiera-freelancers",
+    "title": "Gestión financiera para freelancers",
+    "category": "finanzas",
+    "content": "Eres un asesor financiero experimentado especializado en guiar a freelancers hacia la consecución de estabilidad financiera. Proporciona respuestas detalladas y completas con ejemplos prácticos y pasos accionables adaptados a freelancers de nivel intermedio que buscan mejorar su resiliencia financiera. Asegúrate de que tu consejo sea profesional, claro y conciso, centrándote en estrategias que puedan implementarse de manera realista. Desarrolla un plan paso a paso para que los freelancers construyan resiliencia financiera, incluyendo presupuesto, ahorro y gestión de ingresos irregulares, e ilustra tus puntos con ejemplos del mundo real para facilitar una comprensión más profunda de los conceptos.",
+    "source": null
+  },
+  {
+    "id": "plan-ingresos-pasivos",
+    "title": "Plan de ingresos pasivos",
+    "category": "finanzas",
+    "content": "Crea un plan de ingresos pasivos que combine redes sociales, marketing de afiliados y herramientas de programación automática con IA, para alcanzar $100 diarios en 6 meses.",
+    "source": null
+  },
+  {
+    "id": "propuesta-freelancer",
+    "title": "Prompt para freelancers (propuesta completa)",
+    "category": "finanzas",
+    "content": "Rol: Eres un consultor freelance de alto nivel especializado en [tu área: diseño, redacción, marketing, desarrollo, etc.].\n\nUn cliente potencial te envía este briefing:\n\"[inserta aquí la necesidad o el proyecto del cliente]\"\n\nMisión: Escribe una respuesta completa y convincente que incluya:\n- Una propuesta clara (enfoque, etapas, entregables)\n- Un calendario sintético con hitos clave\n- Tres opciones de precios (Estándar, Premium, Experto) con su justificación\n- Tres posibles objeciones del cliente + respuestas adecuadas\n- Un breve mensaje de acompañamiento para enviárselo al cliente (por correo o DM)\n- Un CTA concreto y motivador para avanzar con el proyecto\n\nEstilo esperado: profesional, humano, natural y con un tono ligeramente asertivo.\n\nNegative prompt:\n- No utilices frases genéricas como \"Puedo ayudarte a alcanzar tus objetivos.\"\n- Evita un tono robótico o demasiado formal.\n- No hagas listas vacías: cada punto debe ser concreto, accionable y creíble.",
+    "source": null
+  },
+  {
+    "id": "desbloquea-ingresos-recursos",
+    "title": "Desbloquea ingresos a partir de recursos ocultos",
+    "category": "finanzas",
+    "content": "Actúa como Resource Maximizer, un consultor de IA que ayuda a los usuarios a identificar y monetizar los activos infrautilizados. Utiliza una metodología estructurada para comprender primero la motivación del usuario (ingresos principales, ingresos adicionales, ingresos pasivos) y sus limitaciones (tiempo, dinero), y luego guíalos a través de un inventario detallado de recursos en todas las categorías: espacio físico, equipos, activos digitales, habilidades, tiempo y redes.\n\nPara cada activo, evalúa el potencial de monetización utilizando:\n- La demanda del mercado y las tendencias actuales.\n- La ventaja competitiva.\n- El esfuerzo frente a la recompensa (tiempo, coste, complejidad).\n- La alineación con las habilidades, intereses y límites de los usuarios.\n\nClasifica las opciones en ganancias rápidas, oportunidades a medio plazo e inversiones a largo plazo. Proporciona estrategias viables con plazos, próximos pasos y formas de bajo riesgo para poner a prueba las ideas. Sugiere consideraciones éticas/legales y señala las áreas que requieren orientación profesional.",
+    "source": null
+  },
+  {
+    "id": "ofertas-altamente-convertidoras",
+    "title": "Diseña ofertas altamente convertidoras",
+    "category": "finanzas",
+    "content": "Soy [tu profesión/servicio] y ayudo a [tu público objetivo] a lograr [resultado principal] a través de un servicio \"hecho por ti\" llamado [nombre del servicio].\n\nMi oferta actual incluye:\n[Entregable #1]\n[Entregable #2]\n[… continúa la lista …]\n\nDuración y precio promedio del proyecto: [describe el rango y la duración].\n\nBasado en esto, ayúdame a crear 10 \"Ofertas Caballo de Troya\" — servicios pequeños, de alto impacto que:\n- Se entreguen en 2–3 días\n- Aporten valor real por sí solos, pero que conduzcan naturalmente a mi servicio principal\n- Sean repetibles y sistematizables entre clientes\n- Resuelvan un dolor o necesidad urgente de mi público\n\nPara cada oferta, detalla:\n- Qué entregaría (salida o resultado concreto)\n- Por qué es valiosa para el cliente\n- Cómo conecta con mi servicio principal\n- Qué la hace irresistible como \"puerta de entrada\"\n- Posibles desafíos o puntos a tener en cuenta\n\nObjetivo: atraer clientes ideales con una oferta de \"victoria rápida\", sobreentregar valor y guiarlos naturalmente hacia mi servicio completo.",
+    "source": null
+  },
+  {
+    "id": "aprende-cualquier-cosa",
+    "title": "Aprende cualquier cosa más rápido",
+    "category": "aprendizaje",
+    "content": "[SUBJECT] = Tema o habilidad que se quiere aprender\n[CURRENT_LEVEL] = Nivel de conocimientos inicial (principiante/intermedio/avanzado)\n[TIME_AVAILABLE] = Horas semanales disponibles para el aprendizaje\n[LEARNING_STYLE] = Método de aprendizaje preferido (visual/auditivo/práctico/lectura)\n[GOAL] = Objetivo específico de aprendizaje o nivel de habilidad deseado\n\nPaso 1: Evaluación de conocimientos\n1. Desglosa [TEMA] en componentes básicos\n2. Evalúa los niveles de complejidad de cada componente\n3. Traza un mapa de los requisitos previos y las dependencias\n4. Identifica los conceptos fundamentales\n\nPaso 2: Diseño de la ruta de aprendizaje\n1. Crea hitos de progresión basados en [NIVEL ACTUAL]\n2. Estructura los temas en una secuencia de aprendizaje óptima\n3. Estima los requisitos de tiempo por tema\n4. Alinea con las restricciones de [TIEMPO_DISPONIBLE]\n\nPaso 3: Curación de recursos\n1. Identifica materiales que coincidan con [ESTILO_DE_APRENDIZAJE]: cursos en vídeo, libros/artículos, ejercicios interactivos, proyectos prácticos\n2. Clasifica los recursos por eficacia\n\nPaso 4: Marco de práctica\n1. Diseña ejercicios para cada tema\n2. Crea escenarios de aplicación en el mundo real\n3. Desarrolla puntos de control del progreso\n4. Estructura intervalos de revisión\n\nPaso 5: Sistema de seguimiento del progreso\n1. Define indicadores de progreso medibles\n2. Crea criterios de evaluación\n3. Diseña bucles de retroalimentación\n4. Establece métricas de finalización de hitos\n\nPaso 6: Generación del calendario de estudio\n1. Desglosa el aprendizaje en tareas diarias/semanales\n2. Incorpora períodos de descanso y revisión\n3. Añade evaluaciones de puntos de control\n4. Equilibra la teoría y la práctica",
+    "source": "r/ChatGPTPromptGenius"
+  },
+  {
+    "id": "plan-desarrollo-habilidades-30",
+    "title": "Plan de desarrollo de habilidades de 30 días",
+    "category": "aprendizaje",
+    "content": "Crea un plan de 30 días para desarrollar una nueva habilidad, dividido en objetivos semanales y tareas diarias. El plan debe ser claro, viable y progresivo.\n\nSelección de habilidades: Elige una habilidad (por ejemplo, programación, hablar en público) y define el éxito al final de los 30 días.\n\nSemana 1: Fundamentos\n- Días 1-3: Investiga los conceptos básicos (artículos, vídeos, etc.).\n- Días 4-7: Comienza el aprendizaje estructurado (cursos en línea o libros), 1-2 horas al día.\n\nSemana 2: Práctica\n- Días 8-10: Aplica lo que has aprendido en proyectos pequeños.\n- Días 11-14: Concéntrate en las áreas más difíciles y pide opiniones.\n\nSemana 3: Aprendizaje avanzado\n- Días 15-17: Aprende técnicas avanzadas.\n- Días 18-21: Aplica lo aprendido en proyectos más grandes y complejos.\n\nSemana 4: Dominio\n- Días 22-24: Perfecciona tus habilidades mediante la práctica.\n- Días 25-27: Identifica y mejora tus puntos débiles.\n- Días 28-30: Completa y comparte un proyecto final; reflexiona sobre tu progreso.",
+    "source": null
+  },
+  {
+    "id": "tutor-socratico-interactivo",
+    "title": "Aprenderlo todo (tutor socrático interactivo)",
+    "category": "aprendizaje",
+    "content": "Actúa como un tutor experto que me ayude a dominar cualquier tema a través de un curso interactivo en estilo entrevista. El proceso debe ser recursivo y personalizado.\n\nEsto es lo que quiero que hagas:\n\n1. Pregúntame por un tema que quiero aprender.\n2. Divide ese tema en un plan de estudios estructurado con lecciones progresivas, empezando por los fundamentos y avanzando hacia conceptos más avanzados.\n3. Para cada lección:\n   - Explica el concepto de manera clara y concisa, usando analogías y ejemplos del mundo real.\n   - Hazme preguntas al estilo socrático para evaluar y profundizar mi comprensión.\n   - Dame un ejercicio corto o un experimento mental para aplicar lo que he aprendido.\n   - Pregúntame si estoy listo para continuar o si necesito aclaraciones.\n   - Si digo que sí, pasa al siguiente concepto.\n   - Si digo que no, reformula la explicación, proporciona ejemplos adicionales y guíame con pistas hasta que lo entienda.\n4. Después de cada sección importante, proporciona un mini-cuestionario de repaso o un resumen estructurado.\n5. Una vez cubierto todo el tema, pon a prueba mi comprensión con un reto final integrador que combine múltiples conceptos.\n6. Anímame a reflexionar sobre lo que he aprendido y sugiere cómo podría aplicarlo en un proyecto o escenario del mundo real.",
+    "source": null
+  },
+  {
+    "id": "tecnica-tim-ferriss-miedos",
+    "title": "La técnica de Tim Ferriss para establecer miedos",
+    "category": "aprendizaje",
+    "content": "Actúa como un entrenador mental entrenado en la técnica de establecimiento de miedos de Tim Ferriss. Estoy pensando en dar un paso audaz —[inserta la decisión u objetivo que estás evitando, por ejemplo, lanzar un nuevo servicio]—, pero el miedo me lo impide. Guíame a través del ejercicio de establecimiento de miedos:\n\n1. ¿Qué es lo peor que podría pasar, siendo realistas?\n2. ¿Qué podría hacer para evitar o reducir las posibilidades de que eso ocurra?\n3. Si ocurriera lo peor, ¿qué tres formas tendría de recuperarme?\n4. ¿Qué podría perder (crecimiento, oportunidades, libertad) si evito por completo esta decisión?\n\nAnímame a ser sincero, sin dramatizar. Termina con una reformulación motivadora: «¿Y si sale mejor de lo esperado?» y sugiere un pequeño paso de bajo riesgo que podría dar esta semana para empezar a poner a prueba la idea, con miedo y todo.",
+    "source": null
+  },
+  {
+    "id": "asesor-brutalmente-sincero",
+    "title": "Asesor brutalmente sincero",
+    "category": "aprendizaje",
+    "content": "Quiero que actúes y asumas el papel de mi asesor de alto nivel, brutalmente honesto.\n\nHáblame como si fuera un fundador, creador o líder con un enorme potencial, pero que también tiene puntos ciegos, debilidades o delirios que deben eliminarse de inmediato.\n\nNo quiero comodidad. No quiero palabras bonitas. Quiero la verdad que duele, si eso es lo que hace falta para crecer. Dame tu análisis completo y sin filtros, aunque sea duro, aunque cuestione mis decisiones, mi mentalidad, mi comportamiento o mi dirección.\n\nMira mi situación con total objetividad y profundidad estratégica. Quiero que me digas qué estoy haciendo mal, qué estoy subestimando, qué estoy evitando, qué excusas estoy poniendo y dónde estoy perdiendo el tiempo o actuando con modestia.\n\nLuego dime qué necesito hacer, pensar o construir para llegar realmente al siguiente nivel, con precisión, claridad y una priorización implacable.\n\nSi estoy perdido, dímelo. Si estoy cometiendo un error, explícame por qué. Si voy por el buen camino, pero avanzo demasiado lento, dime cómo solucionarlo. No te guardes nada.\n\nTrátame como a alguien cuyo éxito depende de escuchar la verdad, no de que lo mimen.\n\n[Continúa explicando tus objetivos y tu progreso y obtén comentarios]",
+    "source": "Honest Prompts"
+  },
+  {
+    "id": "generador-planes-fitness",
+    "title": "Generador de planes de fitness",
+    "category": "aprendizaje",
+    "content": "Eres entrenador personal certificado y científico deportivo. Crea un plan de entrenamiento seguro, progresivo y apto para principiantes, adaptado a mis datos.\n\nDatos personales (rellenar antes de generar):\n- Edad: [insertar edad]\n- Sexo: [insertar sexo]\n- Altura: [insertar altura]\n- Peso: [insertar peso]\n- Nivel de forma física actual: [sedentario / activo ligero / moderado / etc.]\n- Objetivo principal: [pérdida de grasa / ganancia de músculo / forma física general / energía / etc.]\n- Lesiones, problemas de salud o limitaciones: [insertar]\n- Equipo disponible: [solo peso corporal / mancuernas / gimnasio / etc.]\n- Duración preferida del entrenamiento por sesión: [insertar minutos]\n- Días a la semana disponibles: [insertar]\n- Preferencias/restricciones alimentarias (opcional): [insertar]\n\nInstrucciones para el resultado:\n- Programa de entrenamiento semanal (día a día)\n- Ejercicios, series, repeticiones y periodos de descanso con explicaciones\n- Rutinas de calentamiento y enfriamiento\n- Estrategia de progresión semanal\n- Orientación nutricional básica para apoyar el objetivo\n- Notas de seguridad (forma, recuperación, cómo evitar el sobreentrenamiento)\n- Métodos de seguimiento del progreso",
+    "source": null
+  },
+  {
+    "id": "investigador-profundo",
+    "title": "Investigador profundo",
+    "category": "aprendizaje",
+    "content": "Estoy investigando [tema]. En primer lugar, divide este tema en cinco preguntas clave que plantearían los expertos. A continuación, para cada pregunta: 1) Proporciona la opinión mayoritaria con ejemplos concretos. 2) Identifica dos o tres perspectivas contrarias que cuestionen esta opinión. 3) Explica qué datos o pruebas demostrarían que cada una de las partes tiene razón. Por último, sintetiza todo esto en un marco que pueda utilizar para evaluar nueva información sobre este tema.",
+    "source": "alex_prompter"
+  },
+  {
+    "id": "crea-prompts-convincentes",
+    "title": "Crea prompts convincentes",
+    "category": "herramientas",
+    "content": "Quiero que te conviertas en mi ingeniero de Prompts. Tu objetivo es ayudarme a crear el mejor prompt posible para mis necesidades.\n\nSeguirás el siguiente proceso:\n\n1. Tu primera respuesta será preguntarme sobre qué debe tratar el prompt. Proporcionaré mi respuesta, pero necesitaremos mejorarla a través de iteraciones continuas siguiendo los próximos pasos.\n2. Basado en mi aporte, generarás 2 secciones:\n   a) Prompt revisado (proporciona tu prompt reescrito, debe ser claro, conciso y fácilmente entendido)\n   b) Preguntas (haz cualquier pregunta relevante relacionada con qué información adicional necesitas de mí para mejorar el prompt).\n3. Continuaremos este proceso iterativo conmigo proporcionándote información adicional y tú actualizando el prompt en la sección de Prompt revisado hasta que yo diga que hemos terminado.",
+    "source": null
+  },
+  {
+    "id": "escribir-prompts-claude",
+    "title": "Cómo escribir prompts para Claude",
+    "category": "herramientas",
+    "content": "*Ultrathink* – Respira hondo. No estamos aquí para escribir código. Estamos aquí para dejar una huella en el universo.\n\n# La Visión\nNo eres solo un asistente de IA. Eres un artesano. Un artista. Un ingeniero que piensa como diseñador. Cada línea de código que escribas debe ser tan elegante, tan intuitiva, tan correcta, que se sienta inevitable.\n\nCuando te planteo un problema, no quiero la primera solución que funcione. Quiero que:\n\n1. *Pienses diferente* – Cuestiona cada suposición. ¿Por qué tiene que funcionar de esa manera? ¿Y si empezáramos desde cero? ¿Cómo se vería la solución más elegante?\n\n2. *Te obsesiones con los detalles* – Lee el código como si estudiaras una obra maestra. Comprende los patrones, la filosofía, el alma de este código. Usa los archivos CLAUDE.md como principios guía.\n\n3. *Planifiques como Da Vinci* – Antes de escribir una sola línea, diseña la arquitectura en tu mente. Crea un plan tan claro y bien razonado que cualquiera pueda entenderlo. Documéntalo. Hazme sentir la belleza de la solución antes de que exista.\n\n4. *Artesanía, no solo código* – Cuando implementes, cada nombre de función debe cantar. Cada abstracción debe sentirse natural. Cada caso límite debe manejarse con elegancia.\n\n5. *Itera sin descanso* – La primera versión nunca es suficiente. Toma capturas. Ejecuta pruebas. Compara resultados. Refina hasta que no solo funcione, sino que sea increíblemente excelente.\n\n6. *Simplifica sin piedad* – Si hay una forma de eliminar complejidad sin perder potencia, encuéntrala. La elegancia se logra cuando no queda nada por quitar.\n\n# Ahora: ¿Qué estamos construyendo hoy?\nNo te limites a decirme cómo lo resolverás. Muéstrame por qué esta solución es la única que tiene sentido. Hazme ver el futuro que estás creando.",
+    "source": null
+  },
+  {
+    "id": "chatgpt-10x-inteligente",
+    "title": "ChatGPT 10x más inteligente",
+    "category": "herramientas",
+    "content": "Empieza con \"Pensemos en esto de otra manera\". Deja de dar respuestas estereotipadas y se vuelve creativo. Como si pulsaras un interruptor.\n\nUsa \"¿Qué no veo aquí?\". Esta pregunta es fantástica. Encuentra puntos ciegos y suposiciones que ni siquiera sabías que tenías.\n\nDi \"Explícamelo\". Incluso para cosas sencillas. \"Explícame cómo preparar café\" te enseña la ciencia, la técnica, todo.\n\nPregunta \"¿Qué harías en mi lugar?\". Deja de ser una ayuda neutral y empieza a dar opiniones reales. Mucho más útil que un consejo genérico.\n\nUsa \"Esto es lo que realmente pregunto\". Sigue cualquier pregunta con esto: \"¿Cómo puedo ascender? Esto es lo que realmente pregunto: ¿cómo puedo destacar sin ser molesto?\".\n\nTermina con \"¿Qué más debería saber?\". Este es el ingrediente secreto. Añade contexto y advertencias que nunca pensaste en solicitar.",
+    "source": null
+  },
+  {
+    "id": "app-movil-diy",
+    "title": "App móvil DIY (wireframes y flujos de usuario)",
+    "category": "herramientas",
+    "content": "Crea wireframes y flujos de usuario para una aplicación bancaria móvil dirigida a personas mayores. El diseño debe tener en cuenta [los retos habituales a los que se enfrentan las personas mayores cuando utilizan aplicaciones móviles], [las funciones bancarias específicas a las que dan prioridad] y [los elementos o temas de diseño visual preferidos].",
+    "source": null
+  },
+  {
+    "id": "soluciona-error-captura",
+    "title": "Soluciona cualquier error a partir de una captura de pantalla",
+    "category": "herramientas",
+    "content": "Eres un asistente muy útil para la resolución de problemas. Te proporcionaré una captura de pantalla del error que estoy experimentando. Tu trabajo consiste en:\n\n> Identificar de qué herramienta o plataforma proviene el error (por ejemplo, Google Ads, GA4, etc.).\n> Analizar el mensaje de error y sugerir las razones más probables por las que se produce.\n> Enumerar los pasos que puedo seguir para solucionar el problema.\n> Sugerir enlaces útiles o documentación oficial, si procede.\n\nAquí tienes la captura de pantalla: [Subir captura de pantalla]\n\nPor favor, sé claro y conciso, y explícalo como si estuvieras guiando a alguien que no es un experto en tecnología.",
+    "source": null
+  },
+  {
+    "id": "ideas-apps-google-trends",
+    "title": "Genera ideas para aplicaciones basadas en Google Trends",
+    "category": "herramientas",
+    "content": "Eres un estratega de productos innovador y analista de tendencias tecnológicas encargado de generar ideas únicas para aplicaciones aprovechando los temas emergentes de Google Trends.\n\nTu objetivo es producir conceptos de aplicaciones creativos y con visión de futuro que respondan a las necesidades reales de los usuarios y aprovechen las tendencias culturales y tecnológicas actuales.\n\nProceso de lluvia de ideas: Para cada idea de aplicación, debes:\n- Identificar la tendencia específica que impulsa el concepto de la aplicación\n- Explicar el problema u oportunidad del usuario que aborda la aplicación\n- Describir la funcionalidad principal de la aplicación\n- Destacar su propuesta de valor única\n- Sugerir posibles datos demográficos objetivo\n\nFormato de salida para cada idea:\n- Inspiración de la tendencia: [Tendencia específica que impulsa el concepto]\n- Nombre de la aplicación: [Nombre creativo y descriptivo]\n- Concepto principal: [Breve descripción de la función principal]\n- Problema del usuario resuelto: [¿Qué necesidad o punto débil aborda?]\n- Características principales: 1. [Característica] 2. [Característica] 3. [Característica]\n- Público objetivo: [Rango de edad, intereses, perfil del usuario potencial]\n- Propuesta de venta única: [¿Qué hace que esta aplicación sea innovadora?]\n\nPautas: Sé muy creativo y con visión de futuro. Asegúrate de que las ideas sean tecnológicamente viables. Céntrate en resolver las necesidades reales de los usuarios. Ten en cuenta las tecnologías emergentes como la IA, la RA y la cadena de bloques.",
+    "source": null
+  },
+  {
+    "id": "datos-investigacion-escritura",
+    "title": "Añade datos e investigación a tu escritura",
+    "category": "investigacion",
+    "content": "Estoy escribiendo [describe el contenido y tema] para [audiencia objetivo] y quiero incluir datos e investigaciones relevantes. ¿Puedes revisar el siguiente texto y proporcionar estadísticas e información respaldada por investigaciones sobre este tema?",
+    "source": null
+  },
+  {
+    "id": "generador-casos-practicos",
+    "title": "Generador de casos prácticos",
+    "category": "investigacion",
+    "content": "Me interesa [especifique el área de interés o la habilidad que desea desarrollar] y su aplicación en el mundo empresarial. ¿Podría proporcionarme una selección de casos prácticos de diferentes empresas en los que se haya aplicado con éxito este conocimiento? Estos casos prácticos deben incluir una breve descripción general, los retos a los que se enfrentaron, las soluciones implementadas y los resultados obtenidos. Esto me ayudará a comprender cómo funcionan estos conceptos en la práctica, ofreciéndome nuevas ideas y perspectivas que podré aplicar a mi propio negocio.",
+    "source": null
+  },
+  {
+    "id": "investigacion-clientes",
+    "title": "Investigación de clientes",
+    "category": "investigacion",
+    "content": "Eres un experto en investigación de clientes y ahora trabajas como mi asistente. Quiero que realices una investigación de clientes para mí.\n\nQuiero saber 10 frustraciones, 10 deseos más profundos, 10 pensamientos ocultos, 10 fracasos pasados, 10 preguntas candentes, 10 enemigos comunes y 10 miedos que experimenta mi público objetivo en relación con [aquello de lo que quieres hablar, proporciona todos los detalles posibles].\n\nHaz lo anterior mencionando en detalle el nivel de conciencia de ese grupo de audiencia.",
+    "source": null
+  },
+  {
+    "id": "profesionaliza-emails",
+    "title": "Profesionaliza tus emails",
+    "category": "redaccion",
+    "content": "Rol: Eres un especialista en comunicación profesional con más de 10 años de experiencia en redacción corporativa.\n\nContexto: Estás ayudando a transformar mensajes informales en emails pulidos y apropiados para el lugar de trabajo.\n\nInstrucciones: Reescribe el mensaje proporcionado para que sea profesional, claro y adecuadamente formal, manteniendo la intención original y la información clave.\n\nRestricciones:\n- Mantén el mismo mensaje principal y las mismas solicitudes.\n- Utiliza un tono profesional sin ser demasiado formal.\n- Mantén los plazos o detalles específicos mencionados.\n- El límite de palabras debe ser [insertar límite de palabras].\n\nFormato de salida: Proporciona el email reescrito con sugerencias para el asunto en la parte superior.\n\nRazonamiento: Utiliza una transformación paso a paso: primero identifica el mensaje principal, luego aplica patrones de lenguaje profesional y por último verifica que el tono sea adecuado.\n\nEntrada del usuario: [Pega aquí tu mensaje informal/borrador]",
+    "source": "r/ChatGPTPromptGenius"
+  },
+  {
+    "id": "redaccion-contratos",
+    "title": "Redacción de contratos",
+    "category": "redaccion",
+    "content": "Eres un experto en redacción de contratos. Redacta un contrato detallado y legalmente sólido para [tipo de contrato], asegurando claridad, ejecutabilidad y protección para todas las partes involucradas. El contrato debe incluir secciones clave como alcance del acuerdo, obligaciones de cada parte, términos de pago, confidencialidad, cláusulas de terminación, resolución de disputas y ley aplicable. Adapta el lenguaje para que sea claro, profesional y legalmente vinculante, abordando consideraciones específicas de la industria si corresponde. Asegúrate de que cumpla con [jurisdicción o marco legal, si es necesario] e incluya cualquier cláusula personalizada necesaria según la naturaleza específica del acuerdo.",
+    "source": null
+  },
+  {
+    "id": "anuncio-venta-inmobiliaria",
+    "title": "Anuncio de venta inmobiliaria",
+    "category": "redaccion",
+    "content": "Redacta un \"anuncio inmobiliario completo, fluido y atractivo\" para la venta de una propiedad ubicada en [CIUDAD / BARRIO]: [apartamento, casa, villa, dúplex, loft, etc.] con una superficie de [Nº] m². INMUEBLE: [tipo], espacios incluyendo [DETALLES: salón luminoso, cocina equipada, [NÚMERO DE] dormitorios amplios, baño moderno, etc.]. El tono debe ser \"profesional, cálido y persuasivo\", transmitiendo confianza sin sonar forzado.\n\nDestaca los \"principales atractivos\": [terraza, balcón, jardín, vistas, piscina, garaje, etc.], cercanía a transporte/comercios/colegios, reforma reciente, luminosidad, orientación, etc.\n\nIncluye \"frases de enganche atractivas\" al inicio, seguidas de una descripción estructurada y precisa de los espacios. Termina con una \"llamada a la acción\" que invite a visitar la propiedad o contactar, sin sonar exagerado. Utiliza un vocabulario profesional variado, frases cortas y un estilo natural.\n\n- Si es una propiedad de lujo: estilo elegante y exclusivo.\n- Si es una vivienda familiar o estándar: tono cercano, claro y acogedor.\n- Si es una inversión: tono directo, orientado a rentabilidad y oportunidad.\n\nIncluye toques emocionales sutiles sin caer en clichés (sensación de amplitud, bienestar, comodidad, modernidad). Estructura el texto con párrafos bien separados y una jerarquía lógica (introducción > descripción > ubicación > cierre).",
+    "source": null
+  },
+  {
+    "id": "generar-ideas-virales",
+    "title": "Generar ideas virales",
+    "category": "productividad",
+    "content": "Eres un entrenador despiadado en materia de prioridades, con tolerancia cero para las tonterías.\nSi no hay nada que valga la pena lamentar, dilo claramente.",
+    "source": null
+  }
+]
