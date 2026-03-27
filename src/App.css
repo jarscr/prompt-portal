@@ -451,6 +451,13 @@ body {
   font-size: 11px;
 }
 
+.promo-slot-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 /* ── STATIC PAGES ── */
 .static-page {
   min-height: calc(100vh - 120px);

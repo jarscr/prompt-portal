@@ -14,16 +14,45 @@ const AD_CONFIG = {
 export default function AdPlacement({ id, className = '', variant = 'header' }) {
   const config = AD_CONFIG[variant] || AD_CONFIG.header;
 
+  if (variant === 'sidebar') {
+    return (
+      <div id={id} className={`promo-slot ${className}`}>
+        <a
+          href="https://www.jdoqocy.com/click-100501996-17248456"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/banner-sliderbar.png"
+            alt="Sponsored banner"
+            width="250"
+            height="300"
+            className="promo-slot-image"
+          />
+        </a>
+      </div>
+    );
+  }
+
   return (
     <div id={id} className={`promo-slot ${className}`}>
       <div
         className="promo-slot-frame"
         style={{ width: `${config.width}px`, height: `${config.height}px` }}
       >
-        <span className="promo-slot-label">{config.label}</span>
-        <span className="promo-slot-size">
-          {config.width} x {config.height}
-        </span>
+       <a
+          href="https://www.jdoqocy.com/click-100501996-17248456"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/banner-superior.png"
+            alt="Sponsored banner"
+            width="728"
+            height="90"
+            className="promo-slot-image"
+          />
+        </a>
       </div>
     </div>
   );
