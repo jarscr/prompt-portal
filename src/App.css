@@ -441,15 +441,7 @@ body {
   max-width: 100%;
 }
 
-.promo-slot-label {
-  font-weight: 600;
-  color: #475569;
-}
 
-.promo-slot-size {
-  color: #94A3B8;
-  font-size: 11px;
-}
 
 .promo-slot-image {
   display: block;
