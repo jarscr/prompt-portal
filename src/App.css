@@ -406,11 +406,10 @@ body {
 
 /* ── AD PLACEMENT ── */
 .promo-slot {
-  border: 2px dashed var(--border);
-  border-radius: 12px;
-  padding: 12px;
+ 
+  padding: 1px;
   text-align: center;
-  color: #94A3B8;
+
   font-size: 12px;
   background: #F8FAFC;
   margin: 16px 0;
@@ -430,9 +429,7 @@ body {
 }
 
 .promo-slot-frame {
-  border: 1px dashed #CBD5E1;
-  border-radius: 8px;
-  background: #fff;
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
