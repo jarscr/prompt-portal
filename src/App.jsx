@@ -6,7 +6,6 @@ import { useCopyToClipboard } from './hooks/useCopyToClipboard';
 import Sidebar from './components/Sidebar';
 import StatsBar from './components/StatsBar';
 import CategorySection from './components/CategorySection';
-import AdPlacement from './components/AdPlacement';
 import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
@@ -46,12 +45,6 @@ export default function App() {
       />
 
       <main className="main-content">
-        <AdPlacement
-          id="header-promo"
-          className="promo-slot-header"
-          variant="header"
-        />
-
         <StatsBar
           totalPrompts={prompts.length}
           totalCategories={CATEGORIES.length}
