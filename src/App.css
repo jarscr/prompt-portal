@@ -310,7 +310,7 @@ body {
   white-space: nowrap;
 }
 
-.openai-btn {
+.claude-btn {
   flex-shrink: 0;
   padding: 6px 14px;
   border-radius: 8px;
@@ -323,15 +323,10 @@ body {
   white-space: nowrap;
 }
 
-.openai-btn:hover {
+.claude-btn:hover {
   background: #bbf7d0;
   border-color: #15803d;
   color: #14532d;
-}
-
-.openai-btn:disabled {
-  opacity: 0.7;
-  cursor: wait;
 }
 
 .run-btn:hover {
@@ -360,36 +355,6 @@ body {
   word-break: break-word;
   border-top: 1px solid #F1F5F9;
   padding-top: 14px;
-}
-
-.ai-result {
-  border-top: 1px solid #d1fae5;
-  background: #f0fdf4;
-  padding: 14px 20px 18px;
-}
-
-.ai-result.error {
-  border-top-color: #fecaca;
-  background: #fef2f2;
-}
-
-.ai-result-title {
-  font-size: 12px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #166534;
-}
-
-.ai-result.error .ai-result-title {
-  color: #991b1b;
-}
-
-.ai-result-body {
-  font-size: 13.5px;
-  line-height: 1.75;
-  color: #374151;
-  white-space: pre-wrap;
-  word-break: break-word;
 }
 
 /* ── NO RESULTS ── */
@@ -469,6 +434,65 @@ body {
   justify-content: center;
 }
 
+/* ── STATIC PAGES ── */
+.static-page {
+  min-height: calc(100vh - 120px);
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.static-page-card {
+  width: 100%;
+  max-width: 820px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 26px;
+}
+
+.static-page-card h1 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.static-page-card p {
+  color: #374151;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+/* ── GLOBAL FOOTER ── */
+.global-footer {
+  border-top: 1px solid var(--border);
+  background: #ffffff;
+}
+
+.global-footer.home {
+  margin-left: var(--sidebar-w);
+}
+
+.global-footer-inner {
+  padding: 16px 20px;
+}
+
+.global-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.global-footer-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.global-footer-link:hover {
+  color: var(--text);
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .sidebar {
@@ -490,5 +514,17 @@ body {
   .card-actions {
     width: 100%;
     justify-content: flex-start;
+  }
+
+  .static-page {
+    padding: 20px;
+  }
+
+  .static-page-card {
+    padding: 20px;
+  }
+
+  .global-footer.home {
+    margin-left: 0;
   }
 }

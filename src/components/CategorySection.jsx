@@ -6,8 +6,7 @@ export default function CategorySection({
   copiedId,
   onCopy,
   onRunInChatGPT,
-  executions,
-  onRunWithOpenAI,
+  onRunInClaude,
 }) {
   if (prompts.length === 0) return null;
 
@@ -30,8 +29,7 @@ export default function CategorySection({
           isCopied={copiedId === prompt.id}
           onCopy={onCopy}
           onRunInChatGPT={onRunInChatGPT}
-          execution={executions[prompt.id]}
-          onRunWithOpenAI={onRunWithOpenAI}
+          onRunInClaude={onRunInClaude}
         />
       ))}
     </section>

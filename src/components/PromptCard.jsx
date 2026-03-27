@@ -4,11 +4,8 @@ export default function PromptCard({
   isCopied,
   onCopy,
   onRunInChatGPT,
-  execution,
-  onRunWithOpenAI,
+  onRunInClaude,
 }) {
-  const isRunning = execution?.loading || false;
-
   return (
     <div className="prompt-card" style={{ borderLeftColor: color }}>
       <div className="card-header">
@@ -20,11 +17,10 @@ export default function PromptCard({
         </div>
         <div className="card-actions">
           <button
-            className="openai-btn"
-            onClick={() => onRunWithOpenAI(prompt.id, prompt.content)}
-            disabled={isRunning}
+            className="claude-btn"
+            onClick={() => onRunInClaude(prompt.content)}
           >
-            {isRunning ? 'Ejecutando...' : 'Ejecutar con OpenAI'}
+            Ejecutar en Claude
           </button>
           <button
             className="run-btn"
@@ -41,16 +37,6 @@ export default function PromptCard({
         </div>
       </div>
       <div className="prompt-body">{prompt.content}</div>
-      {(execution?.response || execution?.error) && (
-        <div className={`ai-result ${execution?.error ? 'error' : ''}`}>
-          <div className="ai-result-title">
-            {execution?.error ? 'Error al ejecutar' : 'Respuesta de OpenAI'}
-          </div>
-          <div className="ai-result-body">
-            {execution?.error || execution?.response}
-          </div>
-        </div>
-      )}
     </div>
   );
 }
