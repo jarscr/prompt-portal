@@ -14,8 +14,56 @@ const AD_AFTER_SECTION = 3;
 
 export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [executions, setExecutions] = useState({});
   const filtered = useSearch(prompts, searchQuery);
   const { copy, copiedId } = useCopyToClipboard();
+
+  const runInChatGPT = (content) => {
+    const url = `https://chatgpt.com/?q=${encodeURIComponent(content)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const runWithOpenAI = async (promptId, content) => {
+    setExecutions((prev) => ({
+      ...prev,
+      [promptId]: {
+        loading: true,
+        response: prev[promptId]?.response || '',
+        error: '',
+      },
+    }));
+
+    try {
+      const res = await fetch('/api/execute-prompt', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt: content }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || 'No se pudo ejecutar el prompt.');
+      }
+
+      setExecutions((prev) => ({
+        ...prev,
+        [promptId]: {
+          loading: false,
+          response: data.response || '',
+          error: '',
+        },
+      }));
+    } catch (error) {
+      setExecutions((prev) => ({
+        ...prev,
+        [promptId]: {
+          loading: false,
+          response: prev[promptId]?.response || '',
+          error: error.message || 'Ocurrió un error inesperado.',
+        },
+      }));
+    }
+  };
 
   const promptCounts = useMemo(() => {
     const counts = {};
@@ -67,6 +115,9 @@ export default function App() {
               prompts={filtered.filter((p) => p.category === cat.id)}
               copiedId={copiedId}
               onCopy={copy}
+              onRunInChatGPT={runInChatGPT}
+              executions={executions}
+              onRunWithOpenAI={runWithOpenAI}
             />
             {index === AD_AFTER_SECTION - 1 && (
               <AdPlacement id="content-promo" className="promo-slot-content" />

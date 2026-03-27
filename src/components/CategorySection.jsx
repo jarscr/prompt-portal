@@ -1,6 +1,14 @@
 import PromptCard from './PromptCard';
 
-export default function CategorySection({ category, prompts, copiedId, onCopy }) {
+export default function CategorySection({
+  category,
+  prompts,
+  copiedId,
+  onCopy,
+  onRunInChatGPT,
+  executions,
+  onRunWithOpenAI,
+}) {
   if (prompts.length === 0) return null;
 
   return (
@@ -21,6 +29,9 @@ export default function CategorySection({ category, prompts, copiedId, onCopy })
           color={category.color}
           isCopied={copiedId === prompt.id}
           onCopy={onCopy}
+          onRunInChatGPT={onRunInChatGPT}
+          execution={executions[prompt.id]}
+          onRunWithOpenAI={onRunWithOpenAI}
         />
       ))}
     </section>
