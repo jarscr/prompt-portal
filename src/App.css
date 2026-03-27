@@ -408,30 +408,47 @@ body {
 .promo-slot {
   border: 2px dashed var(--border);
   border-radius: 12px;
-  padding: 24px 16px;
+  padding: 12px;
   text-align: center;
   color: #94A3B8;
   font-size: 12px;
   background: #F8FAFC;
   margin: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .promo-slot-sidebar {
   margin: 12px 16px 16px;
-}
-
-.promo-slot-content {
-  margin: 32px 0;
+  min-height: 324px;
 }
 
 .promo-slot-header {
   margin-bottom: 24px;
+  min-height: 174px;
+}
+
+.promo-slot-frame {
+  border: 1px dashed #CBD5E1;
   border-radius: 8px;
-  padding: 16px;
-  min-height: 90px;
+  background: #fff;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 6px;
+  max-width: 100%;
+}
+
+.promo-slot-label {
+  font-weight: 600;
+  color: #475569;
+}
+
+.promo-slot-size {
+  color: #94A3B8;
+  font-size: 11px;
 }
 
 /* ── STATIC PAGES ── */
@@ -508,7 +525,19 @@ body {
     flex-direction: column;
   }
   .promo-slot-header {
-    min-height: 60px;
+    min-height: 120px;
+  }
+
+  .promo-slot-sidebar {
+    min-height: 220px;
+  }
+
+  .promo-slot-frame {
+    width: 100% !important;
+    max-width: 100%;
+    height: auto !important;
+    min-height: 100px;
+    padding: 18px 10px;
   }
 
   .card-actions {

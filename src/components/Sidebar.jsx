@@ -32,7 +32,11 @@ export default function Sidebar({ categories, promptCounts, totalPrompts, search
         ))}
       </nav>
 
-      <AdPlacement id="sidebar-promo" className="promo-slot-sidebar" />
+      <AdPlacement
+        id="sidebar-promo"
+        className="promo-slot-sidebar"
+        variant="sidebar"
+      />
     </aside>
   );
 }

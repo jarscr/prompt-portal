@@ -9,8 +9,6 @@ import CategorySection from './components/CategorySection';
 import AdPlacement from './components/AdPlacement';
 import ScrollToTop from './components/ScrollToTop';
 
-const AD_AFTER_SECTION = 3;
-
 export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const filtered = useSearch(prompts, searchQuery);
@@ -48,7 +46,11 @@ export default function App() {
       />
 
       <main className="main-content">
-        <AdPlacement id="header-promo" className="promo-slot-header" />
+        <AdPlacement
+          id="header-promo"
+          className="promo-slot-header"
+          variant="header"
+        />
 
         <StatsBar
           totalPrompts={prompts.length}
@@ -69,7 +71,7 @@ export default function App() {
           </div>
         )}
 
-        {visibleCategories.map((cat, index) => (
+        {visibleCategories.map((cat) => (
           <div key={cat.id}>
             <CategorySection
               category={cat}
@@ -79,9 +81,6 @@ export default function App() {
               onRunInChatGPT={runInChatGPT}
               onRunInClaude={runInClaude}
             />
-            {index === AD_AFTER_SECTION - 1 && (
-              <AdPlacement id="content-promo" className="promo-slot-content" />
-            )}
           </div>
         ))}
       </main>
