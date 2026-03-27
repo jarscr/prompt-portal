@@ -1,13 +1,13 @@
 const AD_CONFIG = {
   header: {
     label: 'Top Slide Ad',
-    width: 500,
-    height: 150,
+    width: 730,
+    height: 190,
   },
   sidebar: {
     label: 'Sidebar Banner Ad',
-    width: 250,
-    height: 300,
+    width: 220,
+    height: 330,
   },
 };
 
@@ -25,8 +25,8 @@ export default function AdPlacement({ id, className = '', variant = 'header' }) 
           <img
             src="/banner-sliderbar.png"
             alt="Sponsored banner"
-            width="250"
-            height="300"
+            width="220"
+            height="330"
             className="promo-slot-image"
           />
         </a>
@@ -49,7 +49,7 @@ export default function AdPlacement({ id, className = '', variant = 'header' }) 
             src="/banner-superior.png"
             alt="Sponsored banner"
             width="728"
-            height="90"
+            height="187"
             className="promo-slot-image"
           />
         </a>
