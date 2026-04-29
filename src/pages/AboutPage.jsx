@@ -2,24 +2,23 @@ import StaticPageLayout from '../components/StaticPageLayout';
 
 export default function AboutPage() {
   return (
-    <StaticPageLayout title="About">
+    <StaticPageLayout title="Acerca de">
       <p>
-        <strong>prompts.jarscr.com</strong> is a curated prompt library designed to
-        help professionals, creators, and teams get better results from AI tools.
+        <strong>prompts.jarscr.com</strong> es una biblioteca de sugerencias seleccionadas diseñada para
+ayudar a profesionales, creadores y equipos a obtener mejores resultados con las herramientas de IA.
       </p>
       <p>
-        Prompts are organized by practical categories so you can quickly find
-        high-quality starting points for writing, research, marketing,
-        productivity, and business workflows.
+       Las sugerencias están organizadas por categorías prácticas para que puedas encontrar rápidamente
+puntos de partida de alta calidad para la escritura, la investigación, el marketing,
+la productividad y los flujos de trabajo empresariales.
       </p>
       <p>
-        Our goal is to provide clear, reliable prompt templates you can adapt to
-        your own context. We continuously improve the catalog to keep it useful,
-        concise, and easy to navigate.
+       Nuestro objetivo es proporcionar plantillas de indicaciones claras y fiables que puedas adaptar a
+tu propio contexto. Mejoramos continuamente el catálogo para que siga siendo útil,
+conciso y fácil de navegar.
       </p>
       <p>
-        This website may include sponsored placements and, in the future, Google
-        AdSense ads to support ongoing maintenance and content updates.
+      Este sitio web puede incluir anuncios patrocinados y, en el futuro, anuncios de Google AdSense para financiar el mantenimiento y las actualizaciones de contenido.
       </p>
     </StaticPageLayout>
   );

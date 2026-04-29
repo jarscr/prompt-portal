@@ -2,40 +2,47 @@ import StaticPageLayout from '../components/StaticPageLayout';
 
 export default function PrivacyPolicyPage() {
   return (
-    <StaticPageLayout title="Privacy Policy">
+    <StaticPageLayout title="Politica de privacidad">
       <p>
-        <strong>Effective date:</strong> March 27, 2026
-      </p>
-      <p>
-        At <strong>prompts.jarscr.com</strong>, we are committed to protecting your
-        privacy. This Privacy Policy explains what information we collect, how we
-        use it, and your choices regarding that information.
-      </p>
-      <p>
-        We may collect basic technical data such as browser type, device
-        information, pages visited, and approximate location through analytics
-        tools. We use this information to operate, secure, and improve the site.
-      </p>
-      <p>
-        We do not sell personal information. If you contact us directly, we may
-        store your message and contact details only for communication and support
-        purposes.
-      </p>
-      <p>
-        This site may display third-party advertising, including future
-        integration with Google AdSense. Advertising partners may use cookies or
-        similar technologies to serve personalized or non-personalized ads based
-        on your visit to this and other websites.
-      </p>
-      <p>
-        You can manage ad personalization through Google Ads Settings and control
-        cookies in your browser preferences. Disabling cookies may affect certain
-        site features.
-      </p>
-      <p>
-        If our data practices change, we will update this page with a revised
-        effective date.
-      </p>
+<strong>
+Fecha de entrada en vigor:</strong> 27 de marzo de 2026
+
+</p>
+
+<p>
+En <strong>prompts.jarscr.com</strong>, nos comprometemos a proteger su
+privacidad. Esta Política de Privacidad explica qué información recopilamos, cómo
+la utilizamos y sus opciones con respecto a dicha información.
+
+</p>
+
+<p>
+Podemos recopilar datos técnicos básicos, como el tipo de navegador, la información del dispositivo,
+las páginas visitadas y la ubicación aproximada, mediante herramientas de análisis.
+
+Utilizamos esta información para operar, proteger y mejorar el sitio.
+
+</p>
+
+<p>
+No vendemos información personal. Si se comunica con nosotros directamente, podemos
+almacenar su mensaje y datos de contacto únicamente para fines de comunicación y soporte.
+
+</p>
+
+<p>
+Este sitio puede mostrar publicidad de terceros, incluyendo una futura
+integración con Google AdSense. Los socios publicitarios pueden utilizar cookies o
+tecnologías similares para mostrar anuncios personalizados o no personalizados según
+su visita a este y otros sitios web.
+</p>
+
+<p>
+Puedes gestionar la personalización de anuncios a través de la configuración de Google Ads y controlar
+las cookies en las preferencias de tu navegador. Deshabilitar las cookies puede afectar a ciertas
+funciones del sitio.
+
+</p>
     </StaticPageLayout>
   );
 }

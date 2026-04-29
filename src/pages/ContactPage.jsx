@@ -2,23 +2,24 @@ import StaticPageLayout from '../components/StaticPageLayout';
 
 export default function ContactPage() {
   return (
-    <StaticPageLayout title="Contact">
+    <StaticPageLayout title="Contáctenos">
       <p>
-        We welcome feedback, partnership inquiries, and suggestions for new prompt
-        categories.
+      Agradecemos sus comentarios, consultas sobre colaboraciones y sugerencias para nuevas categorías de indicaciones.
       </p>
       <p>
-        For general questions and support, contact:
+        Para preguntas generales y asistencia, contacte con:
         <br />
-        <strong>hello@jarscr.com</strong>
+        <strong>www.jarscr.com</strong>
       </p>
       <p>
-        For business, sponsorship, or advertising inquiries (including future
-        Google AdSense and ad placements), please include your company name,
-        objectives, and timeline in your message.
+       Para consultas comerciales, de patrocinio o publicitarias (incluidas futuras
+
+publicidades en Google AdSense y otros espacios publicitarios), incluya el nombre de su empresa,
+
+sus objetivos y el cronograma en su mensaje.
       </p>
       <p>
-        We typically respond within 2-3 business days.
+   Normalmente respondemos en un plazo de 2 a 3 días hábiles.
       </p>
     </StaticPageLayout>
   );

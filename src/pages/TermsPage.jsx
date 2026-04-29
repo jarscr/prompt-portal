@@ -2,34 +2,36 @@ import StaticPageLayout from '../components/StaticPageLayout';
 
 export default function TermsPage() {
   return (
-    <StaticPageLayout title="Terms">
+    <StaticPageLayout title="Términos">
       <p>
-        <strong>Effective date:</strong> March 27, 2026
+        <strong>Entra en vigor:</strong> Marzo 27, 2026
       </p>
       <p>
-        By accessing or using <strong>prompts.jarscr.com</strong>, you agree to
-        these Terms. If you do not agree, please do not use the website.
+       Al acceder o utilizar <strong>prompts.jarscr.com</strong>, usted acepta
+      estos Términos. Si no está de acuerdo, por favor, no utilice el sitio web
       </p>
       <p>
-        The prompts and related content are provided for general informational and
-        productivity purposes. You are responsible for reviewing and validating
-        AI-generated outputs before using them in business, legal, medical,
-        financial, or other high-impact contexts.
+       Las indicaciones y el contenido relacionado se proporcionan con fines informativos generales y
+de productividad. Usted es responsable de revisar y validar
+los resultados generados por la IA antes de utilizarlos en contextos comerciales, legales, médicos,
+financieros u otros contextos de alto impacto.
       </p>
       <p>
-        We may update, remove, or reorganize content and categories at any time
-        without prior notice. We may also introduce sponsored or ad-supported
-        sections, including future Google AdSense placements.
+       Podemos actualizar, eliminar o reorganizar el contenido y las categorías en cualquier momento
+sin previo aviso. También podemos introducir secciones patrocinadas o con publicidad,
+
+incluidas futuras ubicaciones de Google AdSense.
       </p>
       <p>
-        You may use prompts from this site for personal or commercial workflows,
-        but you may not reproduce the website as a competing directory or misuse
-        the service in unlawful or abusive ways.
+       Puede utilizar las sugerencias de este sitio para flujos de trabajo personales o comerciales,
+
+pero no puede reproducir el sitio web como un directorio de la competencia ni hacer un uso indebido
+del servicio de forma ilegal o abusiva.
       </p>
       <p>
-        The service is provided "as is" without warranties of any kind. To the
-        fullest extent permitted by law, we are not liable for indirect or
-        consequential damages resulting from the use of this site.
+       El servicio se proporciona «tal cual», sin garantías de ningún tipo.
+
+En la máxima medida permitida por la ley, no nos hacemos responsables de los daños indirectos o consecuentes que resulten del uso de este sitio.
       </p>
     </StaticPageLayout>
   );

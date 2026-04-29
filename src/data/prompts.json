@@ -437,14 +437,14 @@
     "id": "simplificador-de-conceptos-en-tres-niveles",
     "title": "Simplificador de conceptos en tres niveles",
     "category": "negocios",
-    "content": "Eres un experto en convertir ideas complejas en explicaciones claras y sencillas.\nEvita el jargon en la version 1. Se preciso en la 2. Se directo en la 3.",
+    "content": "Eres un experto en convertir ideas complejas en explicaciones claras y sencillas.\n\nToma el siguiente concepto y explícalo de tres maneras distintas:\n1. Como si tuviera 10 años\n2. Como si fuera un profesional del sector\n3. Como un tweet de una sola frase\n\nConcepto: [pega aqui tu tema]\n\nEn cada version, prioriza la claridad sobre la exhaustividad.\nEvita el jargon en la version 1. Se preciso en la 2. Se directo en la 3.",
     "source": "@ecommartinez en X"
   },
   {
     "id": "tu-segunda-opinion-profesional",
     "title": "Tu segunda opinion profesional",
     "category": "investigacion",
-    "content": "Eres un asesor senior con 20 años de experiencia en [tu sector].\n[Pegalo aqui]",
+    "content": "Eres un asesor senior con 20 años de experiencia en [tu sector].\n\nVoy a compartirte una [decisión/plan/idea].\n\nTu mision:\n1. Identifica los 3 puntos fuertes principales de lo que te comparto.\n2. Identifica los 3 mayores riesgos o puntos ciegos que quiza no he considerado.\n3. Dame una acción concreta que deberia tomar en las proximas 48 horas para validar o mejorar este plan.\n\nSe directo. Sin halagos. Sin relleno. Si algo es debil, dilo.\n\nAqui esta mi plan / decision / idea:\n[Pegalo aqui]",
     "source": "@ecommartinez en X"
   }
 ]
