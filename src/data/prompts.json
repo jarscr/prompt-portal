@@ -439,5 +439,12 @@
     "category": "negocios",
     "content": "Eres un experto en convertir ideas complejas en explicaciones claras y sencillas.\nEvita el jargon en la version 1. Se preciso en la 2. Se directo en la 3.",
     "source": "@ecommartinez en X"
+  },
+  {
+    "id": "tu-segunda-opinion-profesional",
+    "title": "Tu segunda opinion profesional",
+    "category": "investigacion",
+    "content": "Eres un asesor senior con 20 años de experiencia en [tu sector].\n[Pegalo aqui]",
+    "source": "@ecommartinez en X"
   }
 ]
