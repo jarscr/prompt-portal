@@ -446,5 +446,12 @@
     "category": "investigacion",
     "content": "Eres un asesor senior con 20 años de experiencia en [tu sector].\n\nVoy a compartirte una [decisión/plan/idea].\n\nTu mision:\n1. Identifica los 3 puntos fuertes principales de lo que te comparto.\n2. Identifica los 3 mayores riesgos o puntos ciegos que quiza no he considerado.\n3. Dame una acción concreta que deberia tomar en las proximas 48 horas para validar o mejorar este plan.\n\nSe directo. Sin halagos. Sin relleno. Si algo es debil, dilo.\n\nAqui esta mi plan / decision / idea:\n[Pegalo aqui]",
     "source": "@ecommartinez en X"
+  },
+  {
+    "id": "generador-de-variaciones-de-anuncios-de-respuesta-directa",
+    "title": "Generador de Variaciones de Anuncios de Respuesta Directa",
+    "category": "seo",
+    "content": "Actúa como redactor de respuesta directa. Escribe 5 variaciones de anuncio para Facebook para una oferta de automatización con IA de $1.997 dirigida a propietarios de pequeños negocios que luchan con el seguimiento de leads. Tono: seguro, práctico, no técnico. Incluye titular, cuerpo del anuncio y CTA.",
+    "source": "@JulieParker144"
   }
 ]
