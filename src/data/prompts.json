@@ -453,5 +453,12 @@
     "category": "seo",
     "content": "Actúa como redactor de respuesta directa. Escribe 5 variaciones de anuncio para Facebook para una oferta de automatización con IA de $1.997 dirigida a propietarios de pequeños negocios que luchan con el seguimiento de leads. Tono: seguro, práctico, no técnico. Incluye titular, cuerpo del anuncio y CTA.",
     "source": "@JulieParker144"
+  },
+  {
+    "id": "evaluador-de-ideas-de-negocio",
+    "title": "Evaluador de Ideas de Negocio",
+    "category": "negocios",
+    "content": "Actúa como asesor de startups.Evalúa la siguiente idea de negocio:[Describe la idea]\nAnaliza:\n- Demanda del mercado\n- Clientes objetivo\n- Panorama competitivo\n- Potencial de ingresos\n- Riesgos clave\nProporciona una recomendación honesta.",
+    "source": "@saidul_dev"
   }
 ]
