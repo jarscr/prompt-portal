@@ -460,5 +460,12 @@
     "category": "negocios",
     "content": "Actúa como asesor de startups.Evalúa la siguiente idea de negocio:[Describe la idea]\nAnaliza:\n- Demanda del mercado\n- Clientes objetivo\n- Panorama competitivo\n- Potencial de ingresos\n- Riesgos clave\nProporciona una recomendación honesta.",
     "source": "@saidul_dev"
+  },
+  {
+    "id": "generador-de-ideas-de-contenido",
+    "title": "Generador de Ideas de Contenido",
+    "category": "seo",
+    "content": "Actúa como un estratega de contenido.\nPlataforma: [plataforma]\n\nGenera 15 ideas de contenido que incluyan:\n\n- Hooks (ganchos)\n- Ángulo del contenido\n- Por qué funcionará bien",
+    "source": "@expertwith_AI"
   }
 ]
