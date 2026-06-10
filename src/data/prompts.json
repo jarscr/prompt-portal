@@ -465,7 +465,7 @@
     "id": "generador-de-ideas-de-contenido",
     "title": "Generador de Ideas de Contenido",
     "category": "seo",
-    "content": "Actúa como un estratega de contenido.\nPlataforma: [plataforma]\n\nGenera 15 ideas de contenido que incluyan:\n\n- Hooks (ganchos)\n- Ángulo del contenido\n- Por qué funcionará bien",
+    "content": "Actúa como un estratega de contenido.\nMi nicho: [tu nicho]\nPlataforma: [plataforma]\n\nGenera 15 ideas de contenido que incluyan:\n\n- Hooks (ganchos)\n- Ángulo del contenido\n- Por qué funcionará bien",
     "source": "@expertwith_AI"
   }
 ]
