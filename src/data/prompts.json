@@ -467,5 +467,12 @@
     "category": "seo",
     "content": "Actúa como un estratega de contenido.\nMi nicho: [tu nicho]\nPlataforma: [plataforma]\n\nGenera 15 ideas de contenido que incluyan:\n\n- Hooks (ganchos)\n- Ángulo del contenido\n- Por qué funcionará bien",
     "source": "@expertwith_AI"
+  },
+  {
+    "id": "convierte-historia-en-post",
+    "title": "Convierte Historia en Post",
+    "category": "redaccion",
+    "content": "Actúa como un experto en estrategia de storytelling. \nQuiero compartir esta experiencia personal como publicación:\n[DESCRIBE QUÉ PASÓ]. \nInvestiga la psicología emocional detrás de por qué esta historia funciona, identifica el punto degiro más fuerte, y luego reescríbela como una publicación de alta retención para [PLATAFORMA] con una aperturaidentificable, tensión, recompensa y lección en menos de [X] palabras.",
+    "source": "@ifioknkem"
   }
 ]
