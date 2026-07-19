@@ -474,5 +474,12 @@
     "category": "redaccion",
     "content": "Actúa como un experto en estrategia de storytelling. \nQuiero compartir esta experiencia personal como publicación:\n[DESCRIBE QUÉ PASÓ]. \nInvestiga la psicología emocional detrás de por qué esta historia funciona, identifica el punto degiro más fuerte, y luego reescríbela como una publicación de alta retención para [PLATAFORMA] con una aperturaidentificable, tensión, recompensa y lección en menos de [X] palabras.",
     "source": "@ifioknkem"
+  },
+  {
+    "id": "crea-tu-pitch-deck",
+    "title": "Crea tu Pitch Deck",
+    "category": "negocios",
+    "content": "Crea un pitch deck para [idea de negocio]. \nCubre el problema, la solución, el mercado objetivo, el modelo de negocio, la ventaja competitiva, la estrategia de entrada al mercado, las perspectivas financieras, los riesgos y una propuesta de inversión convincente.",
+    "source": "@Ejaz_bashir"
   }
 ]
