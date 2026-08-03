@@ -481,5 +481,12 @@
     "category": "negocios",
     "content": "Crea un pitch deck para [idea de negocio]. \nCubre el problema, la solución, el mercado objetivo, el modelo de negocio, la ventaja competitiva, la estrategia de entrada al mercado, las perspectivas financieras, los riesgos y una propuesta de inversión convincente.",
     "source": "@Ejaz_bashir"
+  },
+  {
+    "id": "disena-tu-life-os",
+    "title": "Diseña Tu Life OS",
+    "category": "aprendizaje",
+    "content": "Actúa como el arquitecto de mi Life OS. Mis áreas de vida son: [trabajo/negocio], [salud], [dinero], [relaciones], [aprendizaje], [metas personales].\nMis mayores problemas son: \n[saturación/procrastinación/falta de rutina/etc.]. \nCrea un Life OS simple con categorías, rutina diaria, sistema de planificación semanal, seguimiento de tareas, seguimiento de hábitos, revisión dominical y un panel que pueda copiar en Notion/Notes. \nQue sea práctico y fácil para principiantes.",
+    "source": "@Aiwithpoonam"
   }
 ]
