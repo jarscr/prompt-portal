@@ -488,5 +488,12 @@
     "category": "aprendizaje",
     "content": "Actúa como el arquitecto de mi Life OS. Mis áreas de vida son: [trabajo/negocio], [salud], [dinero], [relaciones], [aprendizaje], [metas personales].\nMis mayores problemas son: \n[saturación/procrastinación/falta de rutina/etc.]. \nCrea un Life OS simple con categorías, rutina diaria, sistema de planificación semanal, seguimiento de tareas, seguimiento de hábitos, revisión dominical y un panel que pueda copiar en Notion/Notes. \nQue sea práctico y fácil para principiantes.",
     "source": "@Aiwithpoonam"
+  },
+  {
+    "id": "diseno-de-marca-en-3-lineas",
+    "title": "Diseño de Marca en 3 Líneas",
+    "category": "marketing",
+    "content": "Imagina que eres un diseñador de marca de élite. \nDesarrolla un logo para [nombre de marca] que capture [valor central] y hable directamente a [audiencia].\nEl diseño debe sentirse sofisticado, atemporal, e instantáneamente reconocible en todo el mundo. \nAléjate de las tendencias pasajeras y prioriza un look que perdure por años.",
+    "source": "@Ambrose0_X"
   }
 ]
