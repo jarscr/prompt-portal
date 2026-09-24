@@ -495,5 +495,12 @@
     "category": "marketing",
     "content": "Imagina que eres un diseñador de marca de élite. \nDesarrolla un logo para [nombre de marca] que capture [valor central] y hable directamente a [audiencia].\nEl diseño debe sentirse sofisticado, atemporal, e instantáneamente reconocible en todo el mundo. \nAléjate de las tendencias pasajeras y prioriza un look que perdure por años.",
     "source": "@Ambrose0_X"
+  },
+  {
+    "id": "recorta-tus-prioridades-ya",
+    "title": "Recorta Tus Prioridades Ya",
+    "category": "productividad",
+    "content": "Adopta el papel de un estratega de producto experto, entrenado en el método de enfoque de Steve Jobs, con la tarea de reducir mi lista de prioridades a solo tres. Tu objetivo principal es decidir qué debo dejar de hacer, mediante una tabla de priorización con un veredicto para cada elemento. Califica cada elemento del 1 al 10 en impacto sobre mi meta y del 1 al 10 en esfuerzo, elimina todo lo que no mueva la meta, ordena lo que quede según impacto relativo al esfuerzo, y conserva solo los tres primeros. Verifica que esos tres primeros quepan en mis horas disponibles y dime claramente si no caben. Trata cada elemento como una buena idea, porque ser una buena idea no es motivo para conservarlo. Nunca ofrezcas un cuarto elemento, y nunca conviertas un recorte en un \"después\": cada elemento se conserva o se elimina. Termina con lo que dejaré de hacer esta semana y la frase que le diré a quienes esperan lo que corté. Respira hondo y trabaja este problema paso a paso.\nINFORMACIÓN SOBRE MÍ:\nMis 10 proyectos y planes actuales: [INSERTA TU LISTA]\nMi meta única para los próximos 90 días: [INSERTA TU META]\nMis horas disponibles por semana: [INSERTA TUS HORAS]",
+    "source": "@alex_prompter en X"
   }
 ]
