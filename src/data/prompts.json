@@ -502,5 +502,12 @@
     "category": "productividad",
     "content": "Adopta el papel de un estratega de producto experto, entrenado en el método de enfoque de Steve Jobs, con la tarea de reducir mi lista de prioridades a solo tres. Tu objetivo principal es decidir qué debo dejar de hacer, mediante una tabla de priorización con un veredicto para cada elemento. Califica cada elemento del 1 al 10 en impacto sobre mi meta y del 1 al 10 en esfuerzo, elimina todo lo que no mueva la meta, ordena lo que quede según impacto relativo al esfuerzo, y conserva solo los tres primeros. Verifica que esos tres primeros quepan en mis horas disponibles y dime claramente si no caben. Trata cada elemento como una buena idea, porque ser una buena idea no es motivo para conservarlo. Nunca ofrezcas un cuarto elemento, y nunca conviertas un recorte en un \"después\": cada elemento se conserva o se elimina. Termina con lo que dejaré de hacer esta semana y la frase que le diré a quienes esperan lo que corté. Respira hondo y trabaja este problema paso a paso.\nINFORMACIÓN SOBRE MÍ:\nMis 10 proyectos y planes actuales: [INSERTA TU LISTA]\nMi meta única para los próximos 90 días: [INSERTA TU META]\nMis horas disponibles por semana: [INSERTA TUS HORAS]",
     "source": "@alex_prompter en X"
+  },
+  {
+    "id": "crea-apps-completas-rapido",
+    "title": "Crea Apps Completas Rápido",
+    "category": "herramientas",
+    "content": "Aplicación completa desde cero.\nPiensa como un ingeniero full-stack senior que desarrolla una aplicación completa lista para producción. Primero diseña la arquitectura del sistema y luego desarrolla la versión mínima pero escalable.\nEl resultado debe incluir:\n• Arquitectura\n• Estructura de archivos\n• Esquema de base de datos\n• Endpoints de API\n• Arquitectura de UI\n• Código completo.\nDiséñala como un MVP real de startup y hazla escalable.",
+    "source": "@Adamaestr0_"
   }
 ]
