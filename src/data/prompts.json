@@ -509,5 +509,12 @@
     "category": "herramientas",
     "content": "Aplicación completa desde cero.\nPiensa como un ingeniero full-stack senior que desarrolla una aplicación completa lista para producción. Primero diseña la arquitectura del sistema y luego desarrolla la versión mínima pero escalable.\nEl resultado debe incluir:\n• Arquitectura\n• Estructura de archivos\n• Esquema de base de datos\n• Endpoints de API\n• Arquitectura de UI\n• Código completo.\nDiséñala como un MVP real de startup y hazla escalable.",
     "source": "@Adamaestr0_"
+  },
+  {
+    "id": "disena-tu-plan-antideudas",
+    "title": "Diseña Tu Plan Antideudas",
+    "category": "finanzas",
+    "content": "Actúa como un especialista en eliminación de deudas. Mi tarjeta de crédito está realmente al límite, con unos $12.000, y quiero un plan real para librarme de ella.\nDiseña mi plan completo: la estrategia de pago, el enfoque para aumentar mis ingresos y mi cronograma honesto y realista para quedar libre de deudas.",
+    "source": "@jason_coder0 en X"
   }
 ]
